@@ -85,7 +85,7 @@ toolbar[brighttext] {
 
 #navigator-toolbox {
   -moz-appearance: none;
-  background: #f4f4f4 linear-gradient(to top, #d4d4d2 39px, #efefef 40px, #f4f4f4 41px);
+  background: #f4f4f4 linear-gradient(to bottom, #f4f4f4 44px, #efefef 45px, #d4d4d2 46px);
   border-top: none;
 }
 
@@ -100,7 +100,7 @@ toolbar[brighttext] {
 /* Toolbars */
 
 #toolbar-menubar {
-  -moz-box-ordinal-group: 5;
+  -moz-box-ordinal-group: 200;
 }
 
 #nav-bar {
@@ -152,6 +152,11 @@ toolbar[brighttext] {
   background: transparent;
 }
 
+/* TODO: lwtheme and brightext theme */
+#navigator-toolbox > #toolbar-menubar {
+  border-bottom: 1px solid var(--toolbar-border-color);
+}
+
 #nav-bar ~ toolbar {
   background: transparent;
 }
@@ -176,6 +181,7 @@ toolbar[brighttext] {
  */
 #personal-bookmarks {
   min-height: 30px;
+  border-top: 1px solid var(--toolbar-border-color);
 }
 
 #browser-bottombox {
