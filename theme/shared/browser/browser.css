@@ -21,7 +21,7 @@
 /* ::::: Colors ::::: */
 
 :root {
-  --toolbar-background: transparent;
+  --toolbar-background: #f4f4f4;
   --toolbar-border-color: #a1a1a1;
 
   --tab-hover-background-color: #dadada;
@@ -85,7 +85,7 @@ toolbar[brighttext] {
 
 #navigator-toolbox {
   -moz-appearance: none;
-  background-color: var(--toolbar-background);
+  background: #f4f4f4 linear-gradient(to top, #d4d4d2 39px, #efefef 40px, #f4f4f4 41px);
   border-top: none;
 }
 
@@ -158,7 +158,7 @@ toolbar[brighttext] {
 
 #nav-bar {
   border-top: none;
-  padding: 4px 3px !important;
+  padding: 6px 3px !important;
 }
 
 #nav-bar-customization-target {
@@ -1071,7 +1071,7 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
 
 :-moz-any(#window-controls, .window-controls) > toolbarbutton {
   height: 100%;
-  min-width: 28px !important;
+  min-width: 34px !important;
   margin: 0 !important;
   position: relative;
 }
@@ -1119,14 +1119,14 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
 /* remove ugly white border around location and searchbars */
 #urlbar, .searchbar-textbox {
  -moz-appearance: none;
-  background: linear-gradient(to bottom, #f0f0f0, #fff);
+  background: linear-gradient(rgb(211,211,209),rgb(252,252,252) 2px, rgb(255,255,255) 90%);
   border: 1px solid;
-  border-color: #b2b6b2 #b8bbb8 #bdbfbd;
+  border-color: #9d9d99;
   border-radius: 3px;
-  box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.15), 0px 1px 0 0 rgba(255,255,255,0.37);
+  box-shadow: 0 0 0 1px rgba(74,144,217,0) inset;
   color: ButtonText;
-  margin: 0px 3px;
-  min-height: 28px;
+  margin: 0px 8px;
+  min-height: 34px;
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
@@ -1143,16 +1143,23 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
 
 toolbar[brighttext] #urlbar,
 toolbar[brighttext] .searchbar-textbox {
-  background: linear-gradient(to bottom, rgba(50,50,50,0.5), rgba(50,50,50,0.8));
-  border-color: rgba(30,30,30,.4);
-  box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.15), 0px 1px 0 0 rgba(255,255,255,0.1);
+  background: transparent;
+  background-image: linear-graident(rgb(29,32,32), rgb(36,37,37) 3px, rgb(41,41,41) 90%)
+  border-color: rgb(28,31,31);
+  box-shadow: 0 0 0 1px rgba(33,93,156,0) inset;
   color: #fff;
 }
 
 #urlbar[focused="true"],
 .searchbar-textbox[focused="true"] {
-  border-color: #729fcf;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.6), inset 0 1px 2px 0 rgba(0,106,221,0.3);
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 1px rgb(74,144,217) inset;
+}
+
+toolbar[brighttext] #urlbar[focused="true"],
+toolbar[brighttext] .searchbar-textbox[focused="true"] {
+  border-color: rgb(15,43,72);
+  box-shadow: 0 0 0 1px rgb(33,93,156) inset;
 }
 
 .urlbar-textbox-container {
@@ -1311,7 +1318,7 @@ toolbar[brighttext] .searchbar-textbox {
 
 #identity-box:-moz-any(:hover:active, [open="true"]),
 #identity-box:-moz-any(:hover:active, [open="true"]):before {
-  background: linear-gradient(to bottom, #d1d1d1, #fff);
+  background: linear-gradient(rgb(200,200,197),rgb(220,220,218));
   -moz-border-end: 1px solid hsla(0,0%,0%,.15);
 }
 toolbar[brighttext] #identity-box:-moz-any(:hover:active, [open="true"]),
@@ -1340,7 +1347,7 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
 
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI:-moz-any(:hover:active, [open="true"]),
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI:-moz-any(:hover:active, [open="true"]):before {
-  background: linear-gradient(to bottom, #d1d1d1, #fff);
+  background: linear-gradient(rgb(200,200,197),rgb(220,220,218));
   box-shadow: inset 0 1px 1px -1px hsla(0,0%,0%,.15);
 }
 
@@ -1371,7 +1378,7 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIden
 
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:-moz-any(:hover:active, [open="true"]),
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:-moz-any(:hover:active, [open="true"]):before {
-  background: linear-gradient(to bottom, hsla(90,81%,45%,.25), hsla(90,81%,45%,.05));
+  background: linear-gradient(to bottom, hsla(90,81%,45%,.25), hsla(90,81%,45%,.15));
 }
 toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:-moz-any(:hover:active, [open="true"]),
 toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:-moz-any(:hover:active, [open="true"]):before {
@@ -2482,11 +2489,9 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 #TabsToolbar {
   -moz-appearance: none;
-  background: #d6d6d6;
+  background: #d1d1cf;
   border-top: 1px solid var(--toolbar-border-color);
   border-bottom: 0;
-  box-shadow: 0 -1px #d9d9d9,
-              inset 0 2px 3px -1px hsla(0,0%,0%,.15);
   min-height: 0;
   padding: 0 10px !important; /* FIXME */
   margin-bottom: -1px;
@@ -2534,7 +2539,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 }
 
 #tabbrowser-tabs {
-  min-height: 35px;
+  min-height: 37px;
   /* override the global style to allow the selected tab to be above the nav-bar */
   z-index: auto;
 }
@@ -2566,6 +2571,10 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
   /* Uncomment it for test transition property */
   /*  transition-duration: 30s !important;*/
+}
+
+.tabbrowser-tab:not(:last-of-type) {
+  padding-right: 8px;
 }
 
 .tabbrowser-tab:-moz-lwtheme-brighttext {
@@ -2620,7 +2629,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 }
 
 .tabbrowser-tab:-moz-any([visuallyselected=true], :hover) .tab-background-middle {
-  box-shadow: inset 0 3px hsla(0,0%,0%,.025), inset 0 2px hsla(0,0%,0%,.025), inset 0 1px hsla(0,0%,0%,.025);
+  box-shadow: none;
 }
 
 .tabbrowser-tab:-moz-any([visuallyselected=true], :hover) .tab-background-middle:-moz-lwtheme {
