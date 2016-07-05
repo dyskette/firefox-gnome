@@ -2350,7 +2350,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 }
 
 #nav-bar[reliefbuttons="true"] #bookmarks-menu-button {
-  min-width: 64px !important;
+  min-width: 65px !important;
 }
 
 #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker {

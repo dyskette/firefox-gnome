@@ -125,11 +125,11 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 }
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([open="true"]):not([buttondown="true"]):hover > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(ltr) {
-  -moz-border-left-colors: rgba(0,0,0,0.08) rgba(255,255,255,0.45);
+  box-shadow: -1px 0 0 rgb(157,157,153);
 }
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([open="true"]):not([buttondown="true"]):hover > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(rtl) {
-  -moz-border-right-colors: rgba(255,255,255,0.45) rgba(0,0,0,0.08);
+  box-shadow: 1px 0 0 rgb(157,157,153);
 }
 
 :-moz-any(#TabsToolbar, #nav-bar)[brighttext] .toolbarbutton-1:not([open="true"]):not([buttondown="true"]):hover > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(ltr) {
@@ -284,10 +284,10 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 }
 
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not([open="true"]):not([buttondown="true"]) > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(ltr) {
-  -moz-border-left-colors: rgba(0,0,0,0.08) rgba(255,255,255,0.45) !important;
+  box-shadow: -1px 0 0 rgb(157,157,153);
 }
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not([open="true"]):not([buttondown="true"]) > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(rtl) {
-  -moz-border-right-colors: rgba(255,255,255,0.45) rgba(0,0,0,0.08) !important;
+  box-shadow: 1px 0 0 rgb(157,157,153);
 }
 
 #nav-bar[reliefbuttons="true"][brighttext] .toolbarbutton-1:not([open="true"]):not([buttondown="true"]) > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(ltr) {
