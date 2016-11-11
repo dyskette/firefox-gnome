@@ -56,6 +56,12 @@ h1 {
   }
 }
 
+#advancedPanelContainer {
+  position: absolute;
+  padding-bottom: 24px;
+  width: 100%;
+}
+
 #errorTitle {
   color: #babdb6;
   text-shadow: 0 1px 0 white;

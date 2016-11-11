@@ -1,6 +1,12 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
- * You can obtain one at http://mozilla.org/MPL/2.0/. */
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
 
 /*** Panel and outer controls ***/
 
@@ -27,22 +33,27 @@
   max-width: 40ch;
 }
 
-#downloadsFooter {
-  color: inherit;
+#downloadsSummary {
+  padding: 8px 38px 8px 12px;
+  -moz-user-focus: normal;
+}
+
+#downloadsSummary > .downloadTypeIcon {
+  list-style-image: url("chrome://browser/skin/downloads/downloadIcon.png");
+}
+
+
+#downloadsSummaryDescription {
+  color: -moz-nativehyperlinktext;
 }
 
 #downloadsHistory {
   background: transparent;
-  color: inherit;
   min-height: 41px;
 }
 
 #downloadsHistory > .button-box {
   margin: 11px 12px;
-}
-
-#downloadsPanel[keyfocus] > #downloadsFooter > #downloadsHistory:focus > .button-box {
-  outline: 1px -moz-dialogtext dotted;
 }
 
 /*** Downloads Footer Background ***/
@@ -67,27 +78,13 @@
   box-shadow: 0 1px 0 hsla(180,20%,10%,.05) inset;
 }
 
-/*** Downloads Summary and List items ***/
+/*** List items and similar elements in the summary ***/
 
 #downloadsSummary,
 richlistitem[type="download"] {
   height: 6em;
   -moz-padding-end: 0;
   color: inherit;
-}
-
-#downloadsSummary {
-  padding: 8px 38px 8px 12px;
-  -moz-user-focus: normal;
-}
-
-#downloadsPanel[keyfocus] > #downloadsFooter > #downloadsSummary:focus {
-  outline: 1px -moz-dialogtext dotted;
-  outline-offset: -5px;
-}
-
-#downloadsSummary > .downloadTypeIcon {
-  list-style-image: url("chrome://browser/skin/downloads/downloadIcon.png");
 }
 
 richlistitem[type="download"] {
@@ -102,27 +99,20 @@ richlistitem[type="download"][selected] {
   background-color: transparent !important;
 }
 
-#downloadsPanel[keyfocus] > #downloadsListBox:focus > richlistitem[type="download"][selected] {
-  outline: 1px -moz-dialogtext dotted;
-  outline-offset: -1px;
-}
-
 .downloadTypeIcon {
   -moz-margin-end: 8px;
   /* Prevent flickering when changing states. */
-  /*
-  min-height: 32px;
-  min-width: 32px;
-  */
+  height: 32px;
+  width: 32px;
 }
 
 .blockedIcon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=dialog");
+  list-style-image: url("chrome://global/skin/icons/Error.png");
 }
 
 /* We hold .downloadTarget, .downloadProgress and .downloadDetails inside of
    a vbox with class .downloadContainer. We set the font-size of the entire
-   container to 90% because:
+   container to --downloads-item-font-size-factor because:
 
    1) This is the size that we want .downloadDetails to be
    2) The container's width is set by localizers by &downloadDetails.width;,
@@ -137,34 +127,25 @@ richlistitem[type="download"][selected] {
 
 #downloadsSummaryDetails,
 .downloadContainer {
-  font-size: 90%;
+  font-size: calc(100% * var(--downloads-item-font-size-factor));
 }
 
 #downloadsSummaryDescription,
 .downloadTarget {
-  margin-bottom: 7px;
+  margin-bottom: var(--downloads-item-target-margin-bottom);
   cursor: inherit;
 }
 
 .downloadTarget {
-  font-size: calc(100%/0.9);
+  font-size: calc(100% / var(--downloads-item-font-size-factor));
 }
 
 #downloadsSummaryDetails,
 .downloadDetails {
-  margin-top: 1px;
-  opacity: 0.6;
+  margin-top: var(--downloads-item-details-margin-top);
+  opacity: var(--downloads-item-details-opacity);
   cursor: inherit;
 }
-
-/*** Highlighted list items ***/
-
-#downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover {
-  background-color: hsla(180,20%,10%,.09) !important;
-  border-color: transparent;
-}
-
-/*** Inline buttons ***/
 
 .downloadButton {
   -moz-appearance: none;
@@ -180,19 +161,55 @@ richlistitem[type="download"][selected] {
   padding: 0;
 }
 
+/*** Panel and outer controls ***/
+
+#downloadsFooter {
+  color: inherit;
+}
+
+#downloadsHistory {
+  color: inherit;
+}
+
+#downloadsPanel[keyfocus] #downloadsSummary:focus,
+#downloadsPanel[keyfocus] #downloadsHistory:focus > .button-box {
+  outline: 1px -moz-dialogtext dotted;
+}
+
+#downloadsPanel[keyfocus] #downloadsSummary:focus {
+  outline-offset: -5px;
+}
+
+/*** List items and similar elements in the summary ***/
+
+:root {
+  --downloads-item-height: 6em;
+  --downloads-item-border-top-color: hsla(0,0%,100%,.2);
+  --downloads-item-border-bottom-color: hsla(0,0%,0%,.15);
+  --downloads-item-font-size-factor: 0.9;
+  --downloads-item-target-margin-bottom: 7px;
+  --downloads-item-details-margin-top: 1px;
+  --downloads-item-details-opacity: 0.6;
+}
+
+.blockedIcon {
+  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=dialog");
+}
+
 .downloadButton:focus > .button-box {
   outline: 1px -moz-dialogtext dotted;
 }
 
-.downloadButton > .button-box > .button-icon {
-  margin: 0 !important;
-  opacity: 0.5;
+/*** Highlighted list items ***/
+
+#downloadsPanel[keyfocus] #downloadsListBox:focus > richlistitem[type="download"][selected] {
+  outline: 1px -moz-dialogtext dotted;
+  outline-offset: -1px;
 }
-.downloadButton:hover > .button-box > .button-icon {
-  opacity: 0.8;
-}
-.downloadButton:hover:active > .button-box > .button-icon {
-  opacity: 1;
+
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"][exists]:hover {
+  background-color: hsla(180,20%,10%,.09) !important;
+  border-color: transparent;
 }
 
 /*** Button icons ***/

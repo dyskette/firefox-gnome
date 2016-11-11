@@ -45,6 +45,24 @@ treecol {
 
 /* Category List */
 
+#categories {
+  max-height: 100vh;
+}
+
+#categories > scrollbox {
+  overflow-x: hidden !important;
+}
+
+/**
+ * We want the last category to always have non-0 getBoundingClientRect().bottom
+ * so we can use the value to figure out the max-height of the list in
+ * preferences.js, so use collapse instead of display: none; if it's hidden
+ */
+#categories > .category[hidden="true"] {
+  display: -moz-box;
+  visibility: collapse;
+}
+
 .category-icon {
   display: none;
 }
@@ -73,7 +91,6 @@ treecol {
 #startupTable > tr > .label-cell {
   text-align: end;
   width: 0; /* make the column as small as possible */
->>>>>>> 3ba06d9... Upgrade to Firefox 38.0.1
 }
 
 #startupTable > tr > .label-cell > label {
@@ -96,7 +113,7 @@ treecol {
   flex-grow: 1;
 }
 
-#useFirefoxSync {
+#useFirefoxSync  {
   font-size: 90%;
   -moz-margin-end: 8px !important;
 }
@@ -512,7 +529,8 @@ description > html|a {
 }
 
 .fxaMobilePromo {
-  margin-bottom: 31px;
+  margin-bottom: 20px;
+  margin-top: 25px;
 }
 
 #fxaLoginRejectedWarning {
@@ -525,9 +543,22 @@ description > html|a {
   margin-bottom: 27.5px;
 }
 
+.androidLink {
+  background-image: url("chrome://browser/skin/fxa/android.png");
+}
+
+.iOSLink {
+  background-image: url("chrome://browser/skin/fxa/ios.png");
+}
+
 .androidLink,
 .iOSLink {
-  margin: 0;
+  margin: 0 0 0 2px;
+  padding-left: 28px;
+  padding-top: 6px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-size: 24px 28px;
 }
 
 #tosPP-small {
@@ -536,6 +567,12 @@ description > html|a {
 }
 
 @media (min-resolution: 1.1dppx) {
+  .androidLink {
+    background-image: url("chrome://browser/skin/fxa/android@2x.png");
+  }
+  .iOSLink {
+    background-image: url("chrome://browser/skin/fxa/ios@2x.png");
+  }
   .fxaSyncIllustration {
     list-style-image: url(chrome://browser/skin/fxa/sync-illustration@2x.png)
   }
@@ -566,6 +603,10 @@ description > html|a {
 
 .actionsMenu > .menulist-label-box > .menulist-label {
   margin-top: 2px !important;
+}
+
+#fxaProfileImage {
+  -moz-user-focus: normal;
 }
 
 menulist.actionsMenu > .menulist-dropmarker {

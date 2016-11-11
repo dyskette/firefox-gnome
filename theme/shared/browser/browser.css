@@ -588,9 +588,7 @@ menuitem:not([type]):not(.menuitem-tooltip):not(.menuitem-iconic-tooltip) {
 }
 
 #subscribeToPageMenuitem:not([disabled]),
-#subscribeToPageMenupopup,
-#BMB_subscribeToPageMenuitem:not([disabled]),
-#BMB_subscribeToPageMenupopup {
+#subscribeToPageMenupopup {
   list-style-image: url("chrome://browser/skin/page-livemarks.png");
 }
 
@@ -1582,6 +1580,11 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIden
   visibility: visible;
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
+  list-style-image: url(chrome://symbolic-icons/skin/connection-icons.svg#https-mixed-display);
+  visibility: visible;
+}
+
 toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #connection-icon {
   list-style-image: url(chrome://symbolic-icons/skin/connection-icons.svg#brand-bright);
 }
@@ -1750,11 +1753,6 @@ toolbar[brighttext] #notification-popup-box {
 
 toolbar[brighttext] #notification-popup-box .notification-anchor-icon {
   opacity: 0.4;
-}
-
-.identity-notification-icon,
-#identity-notification-icon {
-  list-style-image: url(chrome://symbolic-icons/skin/profile.svg);
 }
 
 .geo-notification-icon,
@@ -3303,6 +3301,22 @@ html|*#fullscreen-exit-button {
   border-bottom-width: 0;
 }
 
+.devtools-responsiveui-textinput {
+  -moz-appearance: none;
+  background: #333;
+  color: #fff;
+  border: 1px solid #111;
+  border-radius: 2px;
+  padding: 5px;
+  width: 200px;
+  margin: 0;
+}
+
+.devtools-responsiveui-textinput[attention] {
+  border-color: #38ace6;
+  background: rgba(56,172,230,0.4);
+}
+
 .devtools-responsiveui-menulist,
 .devtools-responsiveui-toolbarbutton {
   -moz-appearance: none;
@@ -3619,11 +3633,11 @@ html|*#fullscreen-exit-button {
    We are copy/pasting variables from light-theme and dark-theme,
    since they aren't loaded in this context (within browser.css). */
 :root[devtoolstheme="light"] #developer-toolbar {
-  --gcli-background-color: #ebeced; /* --theme-tab-toolbar-background */
-  --gcli-input-background: #f0f1f2; /* --theme-toolbar-background */
-  --gcli-input-focused-background: #f7f7f7; /* --theme-sidebar-background */
-  --gcli-input-color: #18191a; /* --theme-body-color */
-  --gcli-border-color: #aaaaaa; /* --theme-splitter-color */
+  --gcli-background-color: #fcfcfc; /* --theme-tab-toolbar-background */
+  --gcli-input-background: #fcfcfc; /* --theme-toolbar-background */
+  --gcli-input-focused-background: #ffffff; /* --theme-sidebar-background */
+  --gcli-input-color: #393f4c; /* --theme-body-color */
+  --gcli-border-color: #dde1e4; /* --theme-splitter-color */
   --selection-background: #4c9ed9; /* --theme-selection-background */
   --selection-color: #f5f7fa; /* --theme-selection-color */
 }
@@ -3649,7 +3663,7 @@ html|*#fullscreen-exit-button {
 #developer-toolbar > toolbarbutton {
   -moz-appearance: none;
   border: none;
-  background: transparent;
+  background-color: transparent;
   margin: 0;
   padding: 0 10px;
   width: 32px;
@@ -3659,15 +3673,19 @@ html|*#fullscreen-exit-button {
   margin: auto 10px;
 }
 
-:root[devtoolstheme="light"] #developer-toolbar > toolbarbutton:not([checked=true]) > image,
+:root[devtoolstheme="light"] #developer-toolbar > .developer-toolbar-button:not([checked=true]) > image,
 :root[devtoolstheme="light"] .gclitoolbar-input-node:not([focused=true])::before  {
   filter: invert(1);
 }
 
-.developer-toolbar-button > .toolbarbutton-icon,
-#developer-toolbar-closebutton > .toolbarbutton-icon {
+.developer-toolbar-button > .toolbarbutton-icon {
   width: 16px;
   height: 16px;
+}
+
+/* The toolkit close button is low contrast in the dark theme so invert it. */
+:root[devtoolstheme="dark"] #developer-toolbar > .close-icon:not(:hover) > image {
+  filter: invert(1);
 }
 
 #developer-toolbar-toolbox-button {
@@ -3708,40 +3726,6 @@ html|*#fullscreen-exit-button {
   #developer-toolbar-toolbox-button[checked=true] {
     -moz-image-region: rect(0px, 128px, 32px, 96px);
   }
-}
-
-#developer-toolbar-closebutton {
-  list-style-image: url("chrome://devtools/skin/images/close.png");
-  -moz-appearance: none;
-  border: none;
-  margin: 0 4px;
-  min-width: 16px;
-  width: 16px;
-  opacity: 0.6;
-}
-
-@media (min-resolution: 1.1dppx) {
-  #developer-toolbar-closebutton {
-    list-style-image: url("chrome://devtools/skin/images/close@2x.png");
-  }
-}
-
-#developer-toolbar-closebutton > .toolbarbutton-icon {
-  /* XXX Buttons have padding in widget/ that we don't want here but can't override with good CSS, so we must
-     use evil CSS to give the impression of smaller content */
-  margin: -4px;
-}
-
-#developer-toolbar-closebutton > .toolbarbutton-text {
-  display: none;
-}
-
-#developer-toolbar-closebutton:hover {
-  opacity: 0.8;
-}
-
-#developer-toolbar-closebutton:hover:active {
-  opacity: 1;
 }
 
 /* GCLI */
@@ -3858,6 +3842,7 @@ html|*#gcli-output-frame {
 .gcli-in-closebrace {
   color: hsl(0,0%,80%);
 }
+
 #notification-popup[popupid="click-to-play-plugins"] > .panel-arrowcontainer > .panel-arrowcontent {
   padding: 0px;
 }
@@ -3923,6 +3908,10 @@ notification.pluginVulnerable {
 
 notification.pluginVulnerable .messageImage {
   list-style-image: url("chrome://browser/skin/notification-pluginBlocked.png");
+}
+
+notification.pluginVulnerable > .notification-inner > .messageCloseButton:not(:hover) {
+  background-image: -moz-image-rect(url("chrome://global/skin/icons/close.svg"), 0, 80, 16, 64);
 }
 
 #notification-popup[popupid="login-fill"] > .panel-arrowcontainer > .panel-arrowcontent {
