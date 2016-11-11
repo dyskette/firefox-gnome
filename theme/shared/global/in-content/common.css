@@ -1,6 +1,6 @@
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+/* - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this file,
+   - You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @namespace html "http://www.w3.org/1999/xhtml";
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
@@ -126,8 +126,11 @@ xul|caption > xul|label {
 *|*.main-content {
   background: #efefef;
   -moz-border-start: 2px solid;
+  padding-top: 40px;
+  -moz-padding-end: 44px; /* compensate the 4px margin of child elements */
+  padding-bottom: 48px;
+  -moz-padding-start: 48px;
   overflow: auto;
-  padding: 40px 48px 48px;
 }
 *|*.main-content:-moz-locale-dir(ltr) {
   -moz-border-left-colors: #dbdbdb #fafafa;
@@ -523,12 +526,6 @@ html|a:hover:active,
   text-decoration: none;
 }
 
-html|a:-moz-focusring,
-xul|*.text-link:-moz-focusring,
-xul|*.inline-link:-moz-focusring {
-  border: 1px dotted -moz-DialogText;
-}
-
 /* Checkboxes and radio buttons */
 
 /* Hide the actual checkbox */
@@ -652,8 +649,9 @@ xul|*.radio-label-box {
   -moz-padding-end: 42px;
 }
 
-*|*.category[selected] {
-  background: var(--in-content-category-background-active);
+*|*.category[selected],
+*|*.category.selected {
+  background-color: var(--in-content-category-background-active);
   background-clip: padding-box;
   border-color: #bdc9e8;
   color: var(--in-content-category-text-selected);
