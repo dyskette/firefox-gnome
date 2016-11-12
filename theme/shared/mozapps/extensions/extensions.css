@@ -68,6 +68,14 @@
   box-shadow: 0 -4px 0 0 #7487e4 inset;
 }
 
+/*** discover view ***/
+
+#discover-view {
+  -moz-margin-start: -48px;
+  -moz-padding-start: 48px;
+  background-color: white;
+}
+
 /*** list ***/
 
 .addon[selected] {

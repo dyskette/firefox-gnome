@@ -193,7 +193,15 @@ richlistitem[type="download"][selected] {
 }
 
 .blockedIcon {
-  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=dialog");
+  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=32");
+}
+
+richlistitem[type="download"][verdict="PotentiallyUnwanted"] .blockedIcon {
+  list-style-image: url("moz-icon://stock/gtk-dialog-warning?size=32");
+}
+
+richlistitem[type="download"][verdict="Uncommon"] .blockedIcon {
+  list-style-image: url("moz-icon://stock/gtk-dialog-info?size=32");
 }
 
 .downloadButton:focus > .button-box {
@@ -214,15 +222,14 @@ richlistitem[type="download"][selected] {
 
 /*** Button icons ***/
 
-.downloadButton.downloadConfirmBlock,
-.downloadButton.downloadCancel {
+.downloadButton.downloadIconCancel {
   list-style-image: url("chrome://symbolic-icons/skin/close.svg");
 }
 
-.downloadButton.downloadShow {
+.downloadButton.downloadIconShow {
   list-style-image: url("chrome://symbolic-icons/skin/folder.svg");
 }
 
-.downloadButton.downloadRetry {
+.downloadButton.downloadIconRetry {
   list-style-image: url("chrome://symbolic-icons/skin/view-refresh.svg");
 }

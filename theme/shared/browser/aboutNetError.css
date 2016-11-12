@@ -2,102 +2,52 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import url("chrome://global/skin/in-content/common.css");
+@import url("chrome://browser/skin/error-pages.css");
 
 body {
-  display: flex;
-  box-sizing: border-box;
-  min-height: 100vh;
-  padding: 0 48px;
-  align-items: center;
-  justify-content: center;
-}
-
-ul, ol {
-  margin: 0;
-  padding: 0;
-  -moz-margin-start: 1.5em;
-}
-
-ul > li, ol > li {
-  margin-bottom: .5em;
-}
-
-ul {
-  list-style: disc;
-}
-
-h1 {
-  margin: 0 0 .3em 0 !important;
+  background-image: linear-gradient(to bottom, #eeeeec, #f6f6f4);
+  background-color: #f6f6f4;
 }
 
 #errorPageContainer {
-  background-position: 35px 15px;
   background-repeat: no-repeat;
-  color: ButtonText;
-  position: relative;
-  min-width: 280px;
-  width: 610px;
-  max-width: 610px;
-  margin: auto 0;
-  padding: 1em 0 3em 0;
-  -moz-padding-start: calc(35px + 160px + 35px);
+  background-position: -14px 25px;
 }
 
 #errorPageContainer:-moz-dir(rtl) {
-  background-position: right 35px top 15px;
+  background-position: right -14px top 25px;
 }
 
-@media (max-width: 675px) {
-  #errorPageContainer {
-    -moz-margin-start: 0;
-    -moz-padding-start: 0;
-    background-image: none !important;
-  }
+body.certerror #errorPageContainer {
+  background-image: url(chrome://browser/skin/about-pages/connection-untrusted.svg);
 }
 
-#advancedPanelContainer {
-  position: absolute;
-  padding-bottom: 24px;
-  width: 100%;
+.title {
+  -moz-margin-start: 175px;
+  -moz-padding-start: 0px;
+  background-image: none;
+  text-shadow: none;
 }
 
-#errorTitle {
-  color: #babdb6;
-  text-shadow: 0 1px 0 white;
-  font-weight: bold;
+body.certerror .title {
+  color: #f59506;
 }
 
-#errorTitleText {
-}
-
-/*
-#errorTitle[sslv3=true],
-#errorTitle[weakCrypto=true] {
-  background-image: url("cert-error.svg");
-}
-*/
-
-#errorShortDesc > p {
-  overflow: auto;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  font-weight: bold;
-  white-space: pre-wrap;
-}
-
-#errorLongDesc > p {
-  margin-top: 1.2em;
-  margin-bottom: 1.2em;
-}
-
-#errorTryAgain {
-  margin-top: 2em;
-  -moz-margin-start: 1.2em;
+.title-text {
+  border-bottom: 1px solid var(--in-content-header-border-color);
+  font-size: .75em;
 }
 
 #errorContainer {
   display: none;
+}
+
+#errorLongContent {
+  -moz-margin-start: 175px;
+}
+
+.hostname {
+  font-weight: bold;
 }
 
 /* Pressing the retry button will cause the cursor to flicker from a pointer to
@@ -111,66 +61,51 @@ button:disabled {
   display: none;
 }
 
-#buttonContainer {
+#certErrorButtonContainer {
   display: none;
-  flex-flow: row wrap;
 }
 
-#buttonSpacer {
-  flex: 1;
+body.certerror #certErrorButtonContainer {
+  display: flex;
+}
+
+body.certerror #netErrorButtonContainer {
+  display: none;
+}
+
+#errorTryAgain {
+  margin-top: 1.2em;
+  min-width: 150px;
+  -moz-margin-start: 174px;
 }
 
 #returnButton {
-  background-color: var(--in-content-primary-button-background);
-  border: none;
-  color: var(--in-content-selected-text);
   min-width: 250px;
-  margin-inline-start: 0;
-}
-
-#returnButton:hover {
-  background-color: var(--in-content-primary-button-background-hover) !important;
-}
-
-#returnButton:hover:active {
-  background-color: var(--in-content-primary-button-background-active) !important;
 }
 
 #advancedButton {
   display: none;
-  min-width: 150px;
 }
 
-#certificateErrorReporting,
-#reportSentMessage {
+body.certerror #advancedButton {
+  display: block;
+}
+
+#certificateErrorReporting {
   display: none;
 }
 
-div#weakCryptoAdvanced {
-  display: none;
-  float: right;
-  /* Align with the "Try Again" button */
-  margin-top: 24px;
-  -moz-margin-end: 24px;
+.container {
+  position: relative;
 }
 
-div#weakCryptoAdvanced a {
-  text-decoration: none;
+#advancedPanelContainer {
+  position: absolute;
+  padding: 24px 0;
+  width: 100%;
 }
 
-div#weakCryptoAdvanced a:hover {
-  text-decoration: underline;
-}
-
-span.downArrow {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 0.6em;
-  -moz-margin-start: 0.5em;
-  transform: scaleY(0.7);
-}
-
-div#weakCryptoAdvancedPanel {
+.advanced-panel {
   /* Hidden until the link is clicked */
   display: none;
   background-color: white;
@@ -200,10 +135,40 @@ span#hostname {
   cursor: pointer;
 }
 
-#errorCode {
+#errorCode:not([href]) {
   color: var(--in-content-page-color);
   cursor: text;
   text-decoration: none;
+}
+
+#errorCode[href] {
+  white-space: nowrap;
+}
+
+#badCertTechnicalInfo {
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+#certificateErrorReporting {
+  display: none;
+}
+
+#certificateErrorDebugInformation {
+  display: none;
+  background-color: var(--in-content-box-background-hover) !important;
+  border-top: 1px solid var(--in-content-border-color);
+  position: absolute;
+  left: 0%;
+  top: 100%;
+  width: 65%;
+  padding: 1em 17.5%;
+}
+
+#certificateErrorText {
+  font-family: monospace;
+  white-space: pre-wrap;
+  padding: 1em 0;
 }
 
 #reportSendingMessage {
@@ -245,9 +210,8 @@ span#hostname {
     background-image: url(chrome://browser/skin/about-pages/file-not-found.svg);
   }
 
-  #errorTitle {
+  .title {
     color: #3c3591;
-    text-shadow: none;
   }
 
 }
@@ -260,9 +224,8 @@ span#hostname {
     background-image: url(chrome://browser/skin/about-pages/offline-mode.svg);
   }
 
-  #errorTitle {
+  .title {
     color: #646f6c;
-    text-shadow: none;
   }
 
 }

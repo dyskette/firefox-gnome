@@ -112,8 +112,14 @@ description > .text-link:focus {
   width: 0.5em;
 }
 
+#pairDeviceThrobber,
+#login-throbber {
+  -moz-box-align: center;
+}
+
 #pairDeviceThrobber > image,
 #login-throbber > image {
+  width: 16px;
   list-style-image: url("chrome://global/skin/icons/loading_16.png");
 }
 

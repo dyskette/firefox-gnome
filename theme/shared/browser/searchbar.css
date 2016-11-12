@@ -134,7 +134,7 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
   font-weight: normal;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   padding: 3px 5px;
-  color: MenuText;
+  color: GrayText;
 }
 
 .search-panel-header > label {
@@ -201,6 +201,8 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 
 .addengine-item {
   -moz-appearance: none;
+  background-color: transparent;
+  color: inherit;
   border: none;
   height: 32px;
   margin: 0;

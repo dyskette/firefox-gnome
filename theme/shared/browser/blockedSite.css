@@ -1,0 +1,71 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url("chrome://browser/skin/error-pages.css");
+
+body {
+  background-image: linear-gradient(to bottom, #eeeeec, #f6f6f4);
+  background-color: #f6f6f4;
+  color: ButtonText;
+}
+
+#errorPageContainer {
+  background-image: url(chrome://browser/skin/about-pages/danger.svg);
+  background-repeat: no-repeat;
+  background-position: -4px 25px;
+}
+
+#errorPageContainer:-moz-dir(rtl) {
+  background-position: right -4px top 25px;
+}
+
+.title {
+  color: #d8001d;
+  -moz-margin-start: 175px;
+  -moz-padding-start: 0px;
+  text-shadow: none;
+  background-image: none;
+}
+
+.title-text {
+  border-bottom: 1px solid var(--in-content-header-border-color);
+  font-size: .75em;
+}
+
+#errorLongContent {
+  -moz-margin-start: 175px;
+}
+
+#errorShortDesc {
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.button-container button {
+  margin-top: 1.2em;
+}
+
+/* Style warning button to look like a small text link in the
+   bottom right. This is preferable to just using a text link
+   since there is already a mechanism in browser.js for trapping
+   oncommand events from unprivileged chrome pages (BrowserOnCommand).*/
+#ignoreWarningButton {
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  color: ButtonText;
+  text-decoration: underline;
+  margin: 4px 0 0 0;
+  padding: 0;
+  font-size: smaller;
+  min-width: 0;
+}
+
+#ignoreWarningButton:hover {
+  cursor: pointer;
+}
+
+#ignoreWarning {
+  text-align: end;
+}
