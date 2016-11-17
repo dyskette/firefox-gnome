@@ -11,41 +11,30 @@
   color: ButtonText;
 }
 
-#warningBox {
-  /*
-  background-color: transparent;
-  color: -moz-FieldText;
-  border: 0px solid ThreeDShadow;
-  border-radius: 10px;
-  padding: 3em;
-  -moz-padding-start: 30px;
-  margin-left: 1em;
-  margin-right: 1em;
-  */
-}
-
-#warningInnerBox {
-  max-width: 50em;
+.title {
+  background-image: none;
 }
 
 #warningTitle {
-  font-size: 160%;
+  font-size: .80em;
+  font-weight: bolder;
+  line-height: 1.2;
   color: #babdb6;
-  text-shadow: 0 1px 0 white;
-  margin: 0 0 .3em 0;
+  margin: 0;
+  margin-bottom: .5em;
 }
 
 #warningText {
-  font-size: 100%;
-  margin-left: 0;
+  margin: 1em 0;
 }
 
 #warningButton {
-  margin-top: 1.9em;
+  margin-top: 0.6em;
 }
 
 #filterRow {
-  margin-top: 5px;
+  margin-top: 4px;
+  margin-inline-start: 4px;
 }
 
 #showWarningNextTime {
@@ -54,8 +43,8 @@
 }
 
 #configTree {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 #configTreeBody::-moz-tree-cell-text(user) {

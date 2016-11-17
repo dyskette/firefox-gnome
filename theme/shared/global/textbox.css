@@ -20,13 +20,13 @@ textbox {
   -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
   -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
   -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
-  padding: 1px 2px 1px;
-  -moz-padding-start: 4px;
+  padding: 2px 2px 3px;
+  padding-inline-start: 4px;
   background-color: -moz-Field;
   color: -moz-FieldText;
 }
 
-html|*.textbox-input,
+html|*.textbox-input, 
 html|*.textbox-textarea {
   margin: 0px !important;
   border: none !important;
@@ -74,7 +74,7 @@ textbox.plain html|*.textbox-textarea {
 
 .textbox-search-icon {
   /*
-  list-style-image: url(moz-icon://stock/edit-find-symbolic?size=menu);
+  list-style-image: url(moz-icon://stock/gtk-find?size=menu);
   */
   list-style-image: url(chrome://symbolic-icons/skin/edit-find.svg);
   opacity: .5;
@@ -82,7 +82,7 @@ textbox.plain html|*.textbox-textarea {
 
 .textbox-search-clear {
   /*
-  list-style-image: url(moz-icon://stock/edit-clear-symbolic?size=menu);
+  list-style-image: url(moz-icon://stock/gtk-clear?size=menu);
   */
   list-style-image: url(chrome://symbolic-icons/skin/edit-clear.svg);
 }
@@ -151,3 +151,4 @@ menuitem[cmd="cmd_selectAll"] {
 menuitem[cmd="cmd_selectAll"][disabled] {
   list-style-image: url("moz-icon://stock/gtk-select-all?size=menu&state=disabled");
 }
+

@@ -51,8 +51,8 @@ notification[type="critical"] {
 .messageImage {
   width: 16px;
   height: 16px;
-  -moz-margin-start: 5px;
-  -moz-margin-end: 1px;
+  margin-inline-start: 5px;
+  margin-inline-end: 1px;
   margin-bottom: 4px;
 }
 
@@ -82,7 +82,7 @@ notification:-moz-any(@replaceIconValues@) .messageImage {
   min-width: 16px !important;
   max-width: 16px !important;
   min-height: 16px !important;
-  -moz-padding-start: 16px !important;
+  padding-inline-start: 16px !important;
   overflow: hidden !important;
 }
 
@@ -99,7 +99,7 @@ notification:-moz-any(@pluginIconValues@) .messageImage {
 notification .messageCloseButton {
   list-style-image: url(chrome://symbolic-icons/skin/close.svg);
   /* Override style from notificationButton.inc.css */
-  -moz-margin-end: 0px !important;
+  margin-inline-end: 0px !important;
   padding: 1px 3px 1px 4px !important;
   /* Override style for .close-icon from global.css */
   background-image: none !important;
@@ -144,7 +144,7 @@ notification .messageCloseButton:hover > .toolbarbutton-icon {
 }
 
 .popup-notification-closebutton {
-  -moz-margin-end: -10px;
+  margin-inline-end: -10px;
   margin-top: -6px;
 }
 

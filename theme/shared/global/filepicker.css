@@ -30,7 +30,7 @@ treechildren::-moz-tree-image(FilenameColumn) {
 
 treechildren::-moz-tree-image(treecolAutoCompleteValue, directory),
 treechildren::-moz-tree-image(FilenameColumn, directory) {
-  list-style-image: url(moz-icon://stock/gtk-directory?size=menu);
+  list-style-image: url("moz-icon://stock/gtk-directory?size=menu");
 }
 
 treechildren::-moz-tree-image(treecolAutoCompleteValue, file),

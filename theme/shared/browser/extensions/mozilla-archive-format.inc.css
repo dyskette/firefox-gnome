@@ -17,7 +17,7 @@ notification[value="maf-original-info"] .messageImage {
   min-width: 16px !important;
   max-width: 16px !important;
   min-height: 16px !important;
-  -moz-padding-start: 16px !important;
+  padding-inline-start: 16px !important;
   overflow: hidden !important;
 }
 

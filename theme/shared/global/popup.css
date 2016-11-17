@@ -23,13 +23,9 @@ panel {
   color: MenuText;
 }
 
-panel {
-  -moz-appearance: menupopup;
-}
-
 menupopup {
   background-color: Menu;
-  box-shadow: 0 0 1px 1px rgba(0,0,0,.25);
+  box-shadow: 0 0 1px 1px rgba(157, 157, 153, 0.25);
 }
 
 /* ::::: arrow panel ::::: */

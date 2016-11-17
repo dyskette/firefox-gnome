@@ -28,8 +28,8 @@ body {
 
   .title {
     background-image: none !important;
-    -moz-padding-start: 0;
-    -moz-margin-start: 0;
+    padding-inline-start: 0;
+    margin-inline-start: 0;
   }
 
   .title-text {
@@ -37,7 +37,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 684px) {
   body {
     justify-content: unset;
     /* Now that everything is top-aligned, we don't need the
@@ -50,9 +50,7 @@ body {
     padding-bottom: 0;
     border-bottom: none;
   }
-}
 
-@media only screen and (max-width: 480px) {
   .button-container button {
     /* Force buttons to display: block here to try and enforce collapsing margins */
     display: block;

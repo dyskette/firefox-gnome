@@ -5,7 +5,12 @@
 
 /* Toolbar */
 #placesToolbar {
-  border: none;
+  -moz-appearance: none;
+  background-color: Window;
+  border-top: none;
+  border-bottom: 1px solid ThreeDShadow !important;
+  -moz-binding: url(chrome://global/content/bindings/general.xml#windowdragbox);
+  padding: 4px 3px;
 }
 
 /* back button */
@@ -39,7 +44,7 @@
 }
 
 #placesMenu > menu {
-  -moz-padding-start: 4px;
+  padding-inline-start: 4px;
   -moz-binding: url("chrome://browser/skin/places/organizer.xml#toolbarbutton-dropdown");
   -moz-appearance: toolbarbutton;
   color: -moz-DialogText;
@@ -66,7 +71,7 @@
 }
 
 #placesList + splitter + #contentView {
-  -moz-border-start: 1px solid ThreeDShadow;
+  border-inline-start: 1px solid ThreeDShadow;
 }
 
 /* Info box */
@@ -76,7 +81,7 @@
 }
 
 #infoBoxExpanderLabel {
-  -moz-padding-start: 2px;
+  padding-inline-start: 2px;
 }
 
 /**** menuitem stock icons ****/

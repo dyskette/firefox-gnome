@@ -161,7 +161,7 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 .findbar-find-previous {
   list-style-image: url(chrome://symbolic-icons/skin/go-up.svg);
   border-radius: 0 !important;
-  -moz-margin-end: -1px !important;
+  margin-inline-end: -1px !important;
 }
 
 .findbar-find-next {
@@ -195,16 +195,16 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 }
 
 .findbar-find-previous:focus + .findbar-find-next {
-  -moz-border-start-width: 0 !important;
+  border-inline-start-width: 0;
 }
 
 .findbar-find-previous:focus {
-  -moz-border-end-width: 1px;
+  border-inline-end-width: 1px;
 }
 
 .findbar-highlight,
 .findbar-case-sensitive {
-  -moz-margin-start: 5px;
+  margin-inline-start: 5px;
 }
 
 .findbar-highlight {
@@ -217,9 +217,9 @@ findbar toolbarbutton[disabled="true"]:active:hover {
 .findbar-find-status,
 .findbar-matches {
   margin: 0 !important;
-  -moz-margin-start: 12px !important;
+  margin-inline-start: 12px !important;
 }
 
 .find-status-icon[status="pending"] {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://browser/skin/tabbrowser/loading.png");
 }

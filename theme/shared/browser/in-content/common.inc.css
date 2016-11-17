@@ -27,7 +27,7 @@ h1 {
   }
 
   ul, ol {
-    -moz-margin-start: 1.5em !important;
+    margin-inline-start: 1.5em !important;
   }
 
   #errorPageContainer {
@@ -39,17 +39,17 @@ h1 {
     max-width: 610px !important;
     margin: auto 0;
     padding: 1em 0 3em 0;
-    -moz-padding-start: calc(35px + 160px + 35px);
+    padding-inline-start: calc(35px + 160px + 35px);
   }
 
-  #errorPageContainer:-moz-dir(rtl) {
+  #errorPageContainer:dir(rtl) {
     background-position: right 35px top 15px;
   }
 
   @media (max-width: 675px) {
     #errorPageContainer {
-      -moz-margin-start: 0;
-      -moz-padding-start: 0;
+      margin-inline-start: 0;
+      padding-inline-start: 0;
       background-image: none !important;
     }
   }
@@ -62,8 +62,8 @@ h1 {
 
   #errorTitleText {
     background: none !important;
-    -moz-padding-start: 0 !important;
-    -moz-margin-start: 0 !important;
+    padding-inline-start: 0 !important;
+    margin-inline-start: 0 !important;
   }
 
   #errorLongContent {
@@ -87,7 +87,7 @@ h1 {
 
   #errorTryAgain {
     margin-top: 2em !important;
-    -moz-margin-start: 1.2em;
+    margin-inline-start: 1.2em;
     min-width: 0 !important;
   }
 

@@ -22,8 +22,8 @@ windowdragbox#search {
 /* Download View Items */
 richlistitem[type="download"] {
   padding: 7px;
-  -moz-padding-start: 4px;
-  -moz-padding-end: 8px;
+  padding-inline-start: 4px;
+  padding-inline-end: 8px;
 }
 
 richlistitem[type="download"]:not([selected="true"]):nth-child(odd) {
@@ -82,7 +82,7 @@ richlistitem[type="download"] progressmeter {
 
 #clearListButton .button-icon {
   display: block !important;
-  -moz-margin-end: 0;
+  margin-inline-end: 0;
 }
 #clearListButton[disabled="true"] .button-icon {
   opacity: .5;

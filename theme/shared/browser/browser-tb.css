@@ -113,15 +113,15 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-menu-dropmarker {
   display: none;
-  -moz-margin-start: 2px;
-  -moz-margin-end: -2px;
+  margin-inline-start: 2px;
+  margin-inline-end: -2px;
 }
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-menubutton-dropmarker {
   -moz-box-align: center;
-  -moz-border-start: 2px solid transparent;
-  -moz-margin-end: 1px;
-  -moz-margin-start: 2px;
+  border-inline-start: 2px solid transparent;
+  margin-inline-end: 1px;
+  margin-inline-start: 2px;
 }
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([open="true"]):not([buttondown="true"]):hover > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(ltr) {
@@ -144,12 +144,12 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  -moz-padding-start: 3px !important;
-  -moz-padding-end: 0px !important;
+  padding-inline-start: 3px !important;
+  padding-inline-end: 0px !important;
 }
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-menubutton-button .toolbarbutton-icon {
-  -moz-margin-end: 0 !important;
+  margin-inline-end: 0 !important;
 }
 
 /* ::::: ::::: */
@@ -173,7 +173,7 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 }
 
 .toolbarbutton-1 .toolbarbutton-icon {
-  -moz-margin-end: 0;
+  margin-inline-end: 0;
 }
 
 #nav-bar .toolbarbutton-1 {
@@ -274,13 +274,13 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 }
 
 #nav-bar[reliefbuttons="true"] .toolbarbutton-menu-dropmarker {
-  -moz-margin-start: -1px;
-  -moz-margin-end: -1px;
+  margin-inline-start: -1px;
+  margin-inline-end: -1px;
 }
 
 #nav-bar[reliefbuttons="true"] .toolbarbutton-menubutton-dropmarker {
-  -moz-padding-end: 2px;
-  -moz-padding-start: 2px;
+  padding-inline-end: 2px;
+  padding-inline-start: 2px;
 }
 
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not([open="true"]):not([buttondown="true"]) > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(ltr) {
@@ -298,11 +298,11 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 }
 
 #nav-bar[reliefbuttons="true"] .toolbarbutton-menubutton-button {
-  -moz-padding-start: 3px !important;
-  -moz-padding-end: 3px !important;
+  padding-inline-start: 3px !important;
+  padding-inline-end: 3px !important;
 }
 #nav-bar[reliefbuttons="true"] .toolbarbutton-menubutton-button > .toolbarbutton-icon {
-  -moz-margin-end: 0 !important;
+  margin-inline-end: 0 !important;
 }
 
 /* ::::: Connected buttons ::::: */
@@ -426,23 +426,23 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 }
 
 #nav-bar :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:not(:first-of-type):not(:last-of-type) {
-  -moz-border-start: 0 !important;
-  -moz-border-end: 0 !important;
+  border-inline-start: 0 !important;
+  border-inline-end: 0 !important;
   border-radius: 0;
-  -moz-margin-start: 0 !important;
-  -moz-margin-end: 0 !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 0 !important;
 }
 
 #nav-bar #forward-button,
 #nav-bar :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:not(:first-of-type) {
-  -moz-border-start-width: 0;
-  -moz-margin-start: 0 !important;
+  border-inline-start-width: 0;
+  margin-inline-start: 0 !important;
 }
 
 #nav-bar #back-button,
 #nav-bar :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:not(:last-of-type) {
-  -moz-border-end-width: 0;
-  -moz-margin-end: 0 !important;
+  border-inline-end-width: 0;
+  margin-inline-end: 0 !important;
 }
 
 #nav-bar:-moz-locale-dir(ltr) :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:first-of-type,

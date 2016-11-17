@@ -56,7 +56,7 @@ notification[value="translation"] menulist > .menulist-dropmarker {
 
 notification[value="translation"] button[type="menu"] .button-menu-dropmarker {
   -moz-appearance: none !important;
-  -moz-margin-start: 10px;
+  margin-inline-start: 10px;
   list-style-image: url(chrome://symbolic-icons/skin/dropmarker.svg);
   filter: url(chrome://browser/skin/symbolic-icons-colors.svg#white);
 }

@@ -64,7 +64,7 @@
   background-image: url("chrome://global/skin/narrate/start.svg");
 }
 
-#narrate-start-stop.speaking {
+#narrate-dropdown.speaking #narrate-start-stop {
   background-image: url("chrome://global/skin/narrate/stop.svg");
 }
 

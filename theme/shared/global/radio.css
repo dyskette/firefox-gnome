@@ -31,7 +31,6 @@ radio {
   -moz-box-align: center;
   margin: 2px;
   border-right: 2px solid transparent;
-  -moz-margin-end: 5px;
 }
 
 .radio-label-center-box {
@@ -43,7 +42,7 @@ radio {
 }
 
 .radio-icon[src] {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 .radio-label {

@@ -10,7 +10,7 @@
   list-style-image: url(chrome://symbolic-icons/skin/extensions/addthis.svg) !important;
 }
 #at_toolbarBtn > .toolbarbutton-icon {
-  -moz-margin-end: 0 !important;
+  margin-inline-end: 0 !important;
 }
 
 #at_urlbarBtn {

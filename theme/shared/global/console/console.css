@@ -47,7 +47,7 @@ statusbar {
 
 .console-row-icon {
   padding: 4px;
-  -moz-padding-start: 5px;
+  padding-inline-start: 5px;
   -moz-box-align: start !important;
 }
 
@@ -73,8 +73,8 @@ statusbar {
 .console-row-code {
   padding-top: 3px;
   padding-bottom: 3px;
-  -moz-padding-start: 3px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 3px;
+  padding-inline-end: 0px;
   color: #0000BB;
   font-size: larger;
 }
@@ -139,8 +139,8 @@ statusbar {
 #ButtonEval {
   margin-top: 2px !important;
   margin-bottom: 2px !important;
-  -moz-margin-start: 0px !important;
-  -moz-margin-end: 2px !important;
+  margin-inline-start: 0px !important;
+  margin-inline-end: 2px !important;
 }
 
 /* ::::: toolbarbuttons ::::: */
@@ -195,8 +195,8 @@ statusbar {
 }
 
 #viewGroup > toolbarbutton {
-  -moz-border-start-width: 0;
-  -moz-border-end-width: 1px;
+  border-inline-start-width: 0;
+  border-inline-end-width: 1px;
   border-radius: 0;
   margin: 0;
   min-width: 120px;
@@ -207,19 +207,19 @@ statusbar {
 }
 
 #viewGroup > toolbarbutton:first-of-type {
-  -moz-border-start-width: 1px;
+  border-inline-start-width: 1px;
   border-radius: 3px 0px 0px 3px;
-  -moz-margin-start: 3px;
+  margin-inline-start: 3px;
 }
 
 #viewGroup > toolbarbutton:last-of-type {
-  -moz-border-end-width: 1px;
+  border-inline-end-width: 1px;
   border-radius: 0px 3px 3px 0px;
-  -moz-margin-end: 3px;
+  margin-inline-end: 3px;
 }
 
 #viewGroup {
-  -moz-margin-start: calc(34px + 3px * 2);
+  margin-inline-start: calc(34px + 3px * 2);
 }
 
 /* Toolbar icons */
@@ -248,18 +248,18 @@ toolbar#ToolbarMode toolbarbutton {
 
 #Console\:clear {
   /*
-  list-style-image: url(moz-icon://stock/edit-clear-all-symbolic?size=menu);
+  list-style-image: url("moz-icon://stock/gtk-clear?size=toolbar");
   */
   list-style-image: url(chrome://symbolic-icons/skin/edit-clear-all.svg);
 }
 
 toolbar#ToolbarMode .toolbarbutton-text {
-  -moz-padding-end: 4px;
+  padding-inline-end: 4px;
 }
 
 /* ::::: Fix Error Console toolbar button text spacing ::::: */
 
 .toolbarbutton-text {
-  -moz-padding-start: 0px;
-  -moz-padding-end: 5px;
+  padding-inline-start: 0px;
+  padding-inline-end: 5px;
 }

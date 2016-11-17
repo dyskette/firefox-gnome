@@ -12,7 +12,7 @@
   background: url(chrome://symbolic-icons/skin/extensions/ghostery.svg) no-repeat center !important;
   width: 16px !important;
   height: 16px !important;
-  -moz-padding-start: 16px !important;
+  padding-inline-start: 16px !important;
   overflow: hidden !important;
 }
 
@@ -26,7 +26,7 @@ toolbarpaletteitem[place="palette"] #ghostery-button > .toolbarbutton-icon {
   background-size: 32px 32px !important;
   width: 32px !important;
   height: 32px !important;
-  -moz-padding-start: 32px !important;
+  padding-inline-start: 32px !important;
 }
 
 toolbaritem[cui-areatype="menu-panel"] #ghostery-button[image*="off"] > .toolbarbutton-icon,

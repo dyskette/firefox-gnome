@@ -2,6 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 :root {
   -moz-appearance: none;
   font-size: 75%;
@@ -45,42 +49,28 @@
 
 #newtab-undo-close-button {
   -moz-appearance: none;
-  background: none;
   padding: 0;
   border: none;
-  list-style-image: url(chrome://symbolic-icons/skin/close.svg);
-  height: 16px;
-  width: 16px;
-}
-
-#newtab-undo-close-button > .toolbarbutton-icon {
-  margin: -4px;
-  opacity: .4;
-}
-
-#newtab-undo-close-button:hover > .toolbarbutton-icon {
-  opacity: 1;
 }
 
 #newtab-undo-close-button {
   -moz-appearance: none;
   padding: 0;
+  margin: 3px 0px;
   border: none;
   height: 16px;
   width: 16px;
   float: right;
   right: 0;
-  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/close.png), 0, 16, 16, 0);
+  background-image: url(chrome://symbolic-icons/skin/close.svg);
   background-color: transparent;
+  opacity: .4;
 }
 
 #newtab-undo-close-button:hover {
-  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/close.png), 0, 32, 16, 16);
+  opacity: 1;
 }
 
-#newtab-undo-close-button:hover:active {
-  background-image: -moz-image-rect(url(chrome://browser/skin/newtab/close.png), 0, 48, 16, 32);
-}
 
 /* CUSTOMIZE */
 #newtab-customize-button,
@@ -248,7 +238,7 @@
 
 /*
 .newtab-site[pinned] .newtab-title {
-  -moz-padding-start: 24px;
+  padding-inline-start: 24px;
 }
 
 .newtab-site[pinned] .newtab-title::before {
@@ -263,7 +253,7 @@
   margin-top: 6px;
 }
 
-.newtab-site[pinned] .newtab-title:-moz-dir(rtl)::before {
+.newtab-site[pinned] .newtab-title:dir(rtl)::before {
   left: auto;
   right: 0;
 }
@@ -271,10 +261,10 @@
 
 /* CONTROLS */
 .newtab-control {
-  width: 16px;
-  height: 16px;
-  padding: 1px 2px 3px;
   border: none;
+  height: 16px;
+  width: 16px;
+  padding: 1px 2px 3px;
 }
 
 .newtab-control::-moz-focus-inner { 
@@ -323,9 +313,3 @@
   font-family: sans-serif;
 }
 */
-
-/* SEARCH */
-#newtab-search-text,
-#newtab-search-submit {
-  color: ButtonText; /* see bug1038607 */
-}

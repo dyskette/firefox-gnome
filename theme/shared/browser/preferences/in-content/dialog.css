@@ -45,7 +45,7 @@ tree:not(#rejectsTree) {
 }
 
 caption {
-  -moz-padding-start: 0;
+  padding-inline-start: 0;
 }
 
 groupbox {
@@ -71,5 +71,5 @@ textbox,
 description,
 .tab-text,
 caption > label {
-  font-size: 1.2em;
+  font-size: 1em;
 }

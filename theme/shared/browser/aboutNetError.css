@@ -14,7 +14,7 @@ body {
   background-position: -14px 25px;
 }
 
-#errorPageContainer:-moz-dir(rtl) {
+#errorPageContainer:dir(rtl) {
   background-position: right -14px top 25px;
 }
 
@@ -23,8 +23,8 @@ body.certerror #errorPageContainer {
 }
 
 .title {
-  -moz-margin-start: 175px;
-  -moz-padding-start: 0px;
+  margin-inline-start: 175px;
+  padding-inline-start: 0px;
   background-image: none;
   text-shadow: none;
 }
@@ -43,7 +43,7 @@ body.certerror .title {
 }
 
 #errorLongContent {
-  -moz-margin-start: 175px;
+  margin-inline-start: 175px;
 }
 
 .hostname {
@@ -55,6 +55,10 @@ body.certerror .title {
  * the button disabled as the initial state. */
 button:disabled {
   cursor: pointer;
+}
+
+#prefChangeContainer {
+  display: none;
 }
 
 #learnMoreContainer {
@@ -76,7 +80,7 @@ body.certerror #netErrorButtonContainer {
 #errorTryAgain {
   margin-top: 1.2em;
   min-width: 150px;
-  -moz-margin-start: 174px;
+  margin-inline-start: 174px;
 }
 
 #returnButton {
@@ -171,16 +175,6 @@ span#hostname {
   padding: 1em 0;
 }
 
-#reportSendingMessage {
-  /* adjust the line-height to match the link */
-  line-height: 22px;
-}
-
-#reportSentMessage {
-  /* adjust the line-height to match the link */
-  line-height: 22px;
-}
-
 /* ::::: File not found, <...> pages ::::: */
 
 @-moz-document url-prefix("about:neterror?e=connectionFailure"),
@@ -212,6 +206,14 @@ span#hostname {
 
   .title {
     color: #3c3591;
+  }
+
+}
+
+@-moz-document url-prefix("about:neterror?e=remoteXUL") {
+
+  #errorPageContainer {
+    background-position: -14px 0px;
   }
 
 }

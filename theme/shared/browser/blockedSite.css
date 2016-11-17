@@ -16,14 +16,14 @@ body {
   background-position: -4px 25px;
 }
 
-#errorPageContainer:-moz-dir(rtl) {
+#errorPageContainer:dir(rtl) {
   background-position: right -4px top 25px;
 }
 
 .title {
   color: #d8001d;
-  -moz-margin-start: 175px;
-  -moz-padding-start: 0px;
+  margin-inline-start: 175px;
+  padding-inline-start: 0px;
   text-shadow: none;
   background-image: none;
 }
@@ -33,8 +33,12 @@ body {
   font-size: .75em;
 }
 
+.button-container button:not(.primary) {
+  margin-inline-end: 0;
+}
+
 #errorLongContent {
-  -moz-margin-start: 175px;
+  margin-inline-start: 175px;
 }
 
 #errorShortDesc {
@@ -69,3 +73,51 @@ body {
 #ignoreWarning {
   text-align: end;
 }
+
+/* ::::: Ignore warning ::::: */
+/* FIXME PAGE
+#ignoreWarning {
+  margin-inline-start: 80px;
+  padding: 0 24px;
+  text-align: end !important;
+}
+
+#ignoreWarningButton {*/
+  /* Fix for inline style */
+  color: ButtonText !important;
+  top: auto !important;
+  left: auto !important;
+}
+
+#ignoreWarningButton:dir(rtl) {
+  right: auto !important; /* Bug 1039175 */
+}
+
+/* ::::: Malware blocked page ::::: */
+
+@-moz-document url-prefix("about:neterror?e=malwareBlocked") {
+
+#errorTitle,
+#errorLongContent {
+  margin-inline-start: 150px;
+}
+
+#errorPageContainer {
+  background-image: url(chrome://browser/skin/about-pages/danger.svg);
+  background-position: 52px 50px;
+}
+
+#errorPageContainer:dir(rtl) {
+  background-position: right 52px top 50px;
+}
+
+#errorTitle {
+  color: #d8001d;
+  text-shadow: none;
+}
+
+#errorTryAgain {
+  margin-inline-start: calc(150px + 24px + 17px);
+}
+
+}*/

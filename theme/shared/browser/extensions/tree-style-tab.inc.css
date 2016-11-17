@@ -260,11 +260,11 @@ toolbar[brighttext] .treestyletab-splitter {
 
 @treeDefault@ .tab-icon-overlay {
   margin-top: -10px !important;
-  -moz-margin-start: -16px !important;
-  -moz-margin-end: 0 !important;
+  margin-inline-start: -16px !important;
+  margin-inline-end: 0 !important;
 }
 @treeDefault@[treestyletab-tab-contents-inverted] .tab-icon-overlay {
-  -moz-margin-start: -8px !important;
-  -moz-margin-end: -8px !important;
+  margin-inline-start: -8px !important;
+  margin-inline-end: -8px !important;
 }
 

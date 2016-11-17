@@ -99,7 +99,7 @@ description > .text-link:focus {
 }
 
 .inputColumn {
-  -moz-margin-end: 2px
+  margin-inline-end: 2px
 }
 
 .pin {
@@ -120,7 +120,7 @@ description > .text-link:focus {
 #pairDeviceThrobber > image,
 #login-throbber > image {
   width: 16px;
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://browser/skin/tabbrowser/loading.png");
 }
 
 #captchaFeedback {

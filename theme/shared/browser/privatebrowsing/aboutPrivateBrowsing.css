@@ -49,8 +49,8 @@ a:visited {
 
 .section-main {
   margin-bottom: 48px;
-  -moz-margin-start: var(--icon-margin);
-  -moz-padding-start: 24px;
+  margin-inline-start: var(--icon-margin);
+  padding-inline-start: 24px;
 }
 
 .section-main:last-child {
@@ -69,11 +69,11 @@ p {
   float: left;
   width: 220px;
   line-height: 1.5em;
-  -moz-margin-start: 1em;
+  margin-inline-start: 1em;
   margin-bottom: 0;
 }
 
-.list-row > ul > li:-moz-dir(rtl) {
+.list-row > ul > li:dir(rtl) {
   float: right;
 }
 
@@ -84,11 +84,11 @@ p {
   font-weight: lighter;
   line-height: 1.5em;
   min-height: 64px;
-  -moz-margin-start: 0;
-  -moz-padding-start: calc(var(--icon-margin) + 24px);
+  margin-inline-start: 0;
+  padding-inline-start: calc(var(--icon-margin) + 24px);
 }
 
-.title:-moz-dir(rtl) {
+.title:dir(rtl) {
   background-position: right, center;
 }
 
@@ -101,11 +101,11 @@ p {
   background-image: url("chrome://browser/skin/privatebrowsing/tracking-protection.svg");
   background-repeat: no-repeat;
   background-size: 32px;
-  -moz-margin-start: calc(var(--icon-margin) - 32px);
-  -moz-padding-start: 56px;
+  margin-inline-start: calc(var(--icon-margin) - 32px);
+  padding-inline-start: 56px;
 }
 
-.about-subheader:-moz-dir(rtl) {
+.about-subheader:dir(rtl) {
   background-position: right;
 }
 
@@ -174,13 +174,13 @@ a.button {
   background-image: url("chrome://browser/skin/privatebrowsing/check.svg");
 }
 
-.toggle + .toggle-btn:-moz-dir(rtl)::after {
+.toggle + .toggle-btn:dir(rtl)::after {
   left: auto;
   right: 0;
   transition-property: right;
 }
 
-.toggle + .toggle-btn:-moz-dir(rtl)::before {
+.toggle + .toggle-btn:dir(rtl)::before {
   float: right;
   left: auto;
   right: 9px;
@@ -195,7 +195,7 @@ a.button {
   left: 35px;
 }
 
-.toggle:checked + .toggle-btn:-moz-dir(rtl)::after {
+.toggle:checked + .toggle-btn:dir(rtl)::after {
   right: 35px;
 }
 
@@ -208,3 +208,50 @@ a.button {
   outline-offset: 1px;
   -moz-outline-radius: 2px;
 }
+
+/* ::::: Private Browsing ::::: */
+/* FIXME PAGE
+@-moz-document url-prefix("about:privatebrowsing") {
+
+  html|*#pageContainer {
+    background-image: url(chrome://browser/skin/about-pages/private-browsing.svg);
+    background-position: 35px 15px;
+    background-repeat: no-repeat;
+    color: ButtonText;
+    min-width: 280px !important;
+    width: 610px !important;
+    max-width: 610px !important;
+    margin: auto 0;
+    padding: 1em 0 3em 0;
+    padding-inline-start: calc(35px + 160px + 35px);
+  }
+
+  html|*#pageContainer:-moz-dir(rtl) {
+    background-position: right 35px top 15px;
+  }
+
+  @media (max-width: 675px) {
+    html|*#pageContainer {
+      margin-inline-start: 0;
+      padding-inline-start: 0;
+      background-image: none !important;
+    }
+  }
+
+  html|*.titleText {
+    color: #9200a0;
+    text-shadow: none;
+    font-weight: bold !important;
+    background: none !important;
+    padding-inline-start: 0 !important;
+    margin-inline-start: 0 !important;
+  }
+
+  html|p {
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+  }
+
+}
+*/
+/* ::::: ... ::::: */

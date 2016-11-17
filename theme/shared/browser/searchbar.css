@@ -5,7 +5,7 @@
 %include variables.inc.css
 
 #PopupSearchAutoComplete {
-  -moz-margin-start: -24px;
+  margin-inline-start: -24px;
   padding: 1px;
 }
 
@@ -194,7 +194,7 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 
 .searchbar-engine-one-off-item > .button-box > .button-icon {
   display: -moz-box;
-  -moz-margin-end: 0;
+  margin-inline-end: 0;
   width: 16px;
   height: 16px;
 }
@@ -236,7 +236,7 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 .addengine-item > .button-box > .button-text {
   -moz-box-flex: 1;
   text-align: start;
-  -moz-padding-start: 10px;
+  padding-inline-start: 10px;
 }
 
 .addengine-item:not([image]) {
@@ -248,11 +248,11 @@ menuitem[cmd="cmd_clearhistory"][disabled] {
 }
 
 .search-panel-tree > .autocomplete-treebody::-moz-tree-cell-text {
-  -moz-padding-start: 4px;
+  padding-inline-start: 4px;
 }
 
 .search-panel-tree > .autocomplete-treebody::-moz-tree-image {
-  -moz-padding-start: 5px;
+  padding-inline-start: 5px;
   width: 14px;
   height: 14px;
 }

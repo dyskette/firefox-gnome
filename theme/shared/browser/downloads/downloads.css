@@ -49,11 +49,10 @@
 
 #downloadsHistory {
   background: transparent;
-  min-height: 41px;
 }
 
 #downloadsHistory > .button-box {
-  margin: 11px 12px;
+  margin: 1em;
 }
 
 /*** Downloads Footer Background ***/
@@ -82,16 +81,16 @@
 
 #downloadsSummary,
 richlistitem[type="download"] {
-  height: 6em;
-  -moz-padding-end: 0;
+  height: var(--downloads-item-height);
+  padding-inline-end: 0;
   color: inherit;
 }
 
 richlistitem[type="download"] {
-  background: transparent;
+  margin: 0;
   border: 1px solid transparent;
   border-radius: 2px;
-  margin: 0;
+  background: transparent;
   padding: 0 6px;
 }
 
@@ -100,7 +99,7 @@ richlistitem[type="download"][selected] {
 }
 
 .downloadTypeIcon {
-  -moz-margin-end: 8px;
+  margin-inline-end: 8px;
   /* Prevent flickering when changing states. */
   height: 32px;
   width: 32px;
@@ -124,7 +123,6 @@ richlistitem[type="download"][selected] {
    font-size of .downloadContainer's parent, we use calc to go from the
    smaller font-size back to the original font-size.
  */
-
 #downloadsSummaryDetails,
 .downloadContainer {
   font-size: calc(100% * var(--downloads-item-font-size-factor));
