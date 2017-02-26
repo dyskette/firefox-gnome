@@ -30,5 +30,3 @@ Default:
 With some tweaks, made available by [GNOME Theme Tweak](https://addons.mozilla.org/firefox/addon/gnome-theme-tweak/), Firefox can even look close to native on GNOME 3.12+:
 
 ![Screenshot with tweaks](screenshots/screenshot-tweaks.png)
-
-Also take a look at [comment here](theme/shared/browser/browser.css#L148), if you want to use htitle.
