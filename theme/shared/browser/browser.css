@@ -32,9 +32,9 @@
   --toolbar-background: #f4f4f4;
   --toolbar-border-color: #a1a1a1;
 
-  --tab-hover-background-color: #dadada;
-  --tab-hover-bottom-line-color: #a1a1a1;
-  --tab-selected-background-color: #e1e1e1;
+  --tab-hover-background-color: rgba(232,232,231,0.25);
+  --tab-hover-bottom-line-color: rgb(182,182,179);
+  --tab-selected-background-color: rgba(232,232,231,0.5);
   --tab-selected-bottom-line-color: Highlight;
 
   --panel-separator-color: hsla(210,4%,10%,.14); /* ThreeDShadow */
@@ -139,12 +139,15 @@ toolbar[brighttext] {
 }
 */
 
-/* GNOME 3.20 Titlebar */
 #navigator-toolbox > toolbar:not(:-moz-lwtheme):not(#toolbar-menubar):not(#TabsToolbar):not(#PersonalToolbar) {
   -moz-appearance: none;
   border-style: none;
+  background-color: rgb(239,239,239);
+  /* GNOME 3.20 Titlebar */
+  /*
   background-image: linear-gradient(to top, rgb(212,212,210), rgb(239,239,239) 2px, rgb(244,244,244) 3px);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.8);
+  */
 }
 
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(#nav-bar) {
@@ -1174,9 +1177,9 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
 .searchbar-textbox {
   -moz-appearance: none;
   padding: 0;
-  background: linear-gradient(rgb(211,211,209),rgb(252,252,252) 2px, rgb(255,255,255) 90%);
+  background: rgb(255,255,255);
   border: 1px solid;
-  border-color: #9d9d99;
+  border-color: rgb(182,182,179);
   border-radius: 3px;
   box-shadow: 0 0 0 1px rgba(74,144,217,0) inset;
   color: ButtonText;
@@ -2504,7 +2507,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 #TabsToolbar {
   -moz-appearance: none;
-  background: #d1d1cf;
+  background: rgb(210,210,208);
   border-top: 1px solid var(--toolbar-border-color);
   border-bottom: 0;
   min-height: 0;
@@ -2623,14 +2626,14 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 }
 
 .tabbrowser-tab:not([visuallyselected=true]) {
-  color: #8d9091;
+  color: rgb(139,142,143);
 }
 #TabsToolbar[brighttext] .tabbrowser-tab:not([visuallyselected=true]) {
   color: #a6a8a7;
 }
 
 .tabbrowser-tab:not([visuallyselected=true]):hover {
-  color: #5d6263;
+  color: rgb(93,97,99);
 }
 #TabsToolbar[brighttext] .tabbrowser-tab:not([visuallyselected=true]):hover {
   color: #d3d4d2;
@@ -2681,7 +2684,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 .tabbrowser-tab:hover .tab-background-start:not([visuallyselected=true]),
 .tabbrowser-tab:hover .tab-background-end:not([visuallyselected=true]) {
-  background: hsla(0,0%,68%,.3); /* #c9c9c9 */
+  background: rgba(182,182,179,0.3);
 }
 
 #TabsToolbar[brighttext] .tabbrowser-tab:hover .tab-background-start:not([visuallyselected=true]),
@@ -3003,25 +3006,36 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   margin-inline-end: -3px;
   padding: 0;
   background: none;
+  background-image: none;
   border: 1px solid transparent;
   border-radius: 3px;
   box-shadow: none;
 
-  transition-property: background, border;
-  transition-duration: 200ms, 200ms;
-  transition-timing-function: ease-out;
+  transition-property: none;
+  transition-duration: 0;
+  transition-timing-function: ease;
 }
 
 #TabsToolbar .tab-close-button:hover {
-  border-color: rgba(0, 0, 0, 0.1);
-  transition-timing-function: ease-in;
+  /* FIXME Background image doesn't animate and creates a white line on bottom border animation
+  https://drafts.csswg.org/css-backgrounds/#background-image
+  background-image: linear-gradient(rgb(247,247,247),rgb(232,232,231) 60%,rgb(222,222,221));
+  */
+  background: rgb(240,240,240);
+  border-color: rgb(182,182,179) rgb(182,182,179) rgb(145,145,140);
+  box-shadow: 0 1px rgb(255,255,255) inset;
+  transition-property: all;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
 }
 
 #TabsToolbar .tab-close-button:active:hover {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.13) 1px, rgba(0, 0, 0, 0.08) 2px, rgba(0, 0, 0, 0.07) 100%);
-  border-color: rgba(0, 0, 0, 0.12);
-  border-top-color: rgba(0, 0, 0, 0.27);
-  transition-timing-function: ease-in;
+  background: rgb(217,217,215);
+  border-color: rgb(182,182,179);
+  box-shadow: none;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
 }
 
 #TabsToolbar .tab-close-button > .toolbarbutton-icon {
@@ -3031,7 +3045,6 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   min-width: 16px;
   min-height: 16px;
   opacity: .31;
-  transition: opacity 200ms ease-in;
 }
 
 #TabsToolbar[brighttext] .tab-close-button > .toolbarbutton-icon {
@@ -3041,7 +3054,9 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 #TabsToolbar .tab-close-button:hover > .toolbarbutton-icon {
   background-image: -moz-image-rect(url(chrome://browser/skin/tabbrowser/close.svg), 0, 48, 16, 32);
   opacity: 1;
-  transition-timing-function: ease-in;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
 }
 
 #TabsToolbar[brighttext] .tab-close-button:hover > .toolbarbutton-icon {

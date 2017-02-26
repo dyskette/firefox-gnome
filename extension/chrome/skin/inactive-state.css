@@ -158,12 +158,24 @@ notification .messageImage:-moz-window-inactive {
 #main-window:-moz-window-inactive .tabbrowser-tab {
   color: #aaabac !important;
 }
+
+#main-window:-moz-window-inactive .tabbrowser-tab:not([visuallyselected=true]):hover .tab-background-middle {
+  background: transparent !important;
+  -moz-border-bottom-colors: transparent !important;
+}
+
+#main-window:-moz-window-inactive .tabbrowser-tab:not([visuallyselected=true]):hover .tab-background-start,
+#main-window:-moz-window-inactive .tabbrowser-tab:not([visuallyselected=true]):hover .tab-background-end {
+  background: transparent !important;
+}
+
 #main-window:-moz-window-inactive .tabbrowser-tab[visuallyselected="true"] {
   color: #8d9091 !important;
+  -moz-border-bottom-colors: var(--tab-selected-bottom-line-color) !important;
 }
 
 #main-window:-moz-window-inactive .tabbrowser-tab[visuallyselected="true"] .tab-background-middle {
-  background: #ededed !important;
+  background: rgb(232,232,231) !important;
   box-shadow: none !important;
 }
 

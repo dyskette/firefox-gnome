@@ -90,6 +90,13 @@
   width: 28px;
 }
 
+#newtab-customize-button {
+  font-size: 28px;
+  padding: 0;
+  /* only display the text label when CSS backgrounds are disabled (e.g. in high contrast mode) */
+  color: transparent;
+}
+
 #newtab-customize-button:-moz-any(:hover, :active, [active]) {
   background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 64, 32, 32);
   background-color: #FFFFFF;
@@ -264,10 +271,34 @@
   border: none;
   height: 16px;
   width: 16px;
-  padding: 1px 2px 3px;
+  top: 4px;
 }
 
-.newtab-control::-moz-focus-inner { 
+.newtab-control-pin:dir(ltr),
+.newtab-control-block:dir(rtl) {
+  left: 4px;
+}
+
+.newtab-control-block:dir(ltr),
+.newtab-control-pin:dir(rtl) {
+  right: 4px;
+}
+
+body.compact .newtab-control {
+  top: -8px;
+}
+
+body.compact .newtab-control-pin:dir(ltr),
+body.compact .newtab-control-block:dir(rtl) {
+  left: -8px;
+}
+
+body.compact .newtab-control-block:dir(ltr),
+body.compact .newtab-control-pin:dir(rtl) {
+  right: -8px;
+}
+
+.newtab-control::-moz-focus-inner {
   border: none;
 }
 
