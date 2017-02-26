@@ -36,6 +36,7 @@
   --tab-hover-bottom-line-color: rgb(182,182,179);
   --tab-selected-background-color: rgba(232,232,231,0.5);
   --tab-selected-bottom-line-color: Highlight;
+  --tab-selected-hover-background-color: rgba(232,232,231,0.7);
 
   --panel-separator-color: hsla(210,4%,10%,.14); /* ThreeDShadow */
 }
@@ -1733,13 +1734,11 @@ toolbar[brighttext] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #
 /* Notification icon box */
 #notification-popup-box {
   position: relative;
-  background-color: hsla(0,0%,100%,.4);
   background-clip: padding-box;
   padding-left: 4px;
   border-radius: 2.5px 0 0 2.5px;
   border-width: 0 8px 0 0;
   border-style: solid;
-  border-color: #fff;
   border-image: url(chrome://browser/skin/urlbar-arrow.svg) 0 8 0 0 fill;
   margin-inline-end: 0;
   z-index: 1;
@@ -2512,7 +2511,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   border-top: 1px solid var(--toolbar-border-color);
   border-bottom: 0;
   min-height: 0;
-  padding: 0 10px !important; /* FIXME */
+  padding: 0 3px !important; /* FIXME */
   margin-bottom: -1px;
   position: relative;
 }
@@ -2565,7 +2564,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 #TabsToolbar toolbarbutton {
   -moz-appearance: none;
-  margin-bottom: 2px;
+  margin: 0 3px 2px;
 }
 
 #TabsToolbar > toolbarbutton toolbarbutton {
@@ -2585,15 +2584,11 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   border: none;
 /*  color: inherit;*/
   color: ButtonText;
-  margin: 0;
+  margin: 0 3px;
   padding: 0;
 
   /* Uncomment it for test transition property */
   /*  transition-duration: 30s !important;*/
-}
-
-.tabbrowser-tab:not(:last-of-type) {
-  margin-right: 9px;
 }
 
 .tabbrowser-tab:-moz-lwtheme-brighttext {
@@ -2663,6 +2658,12 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 .tabbrowser-tab[visuallyselected=true] .tab-background-middle {
   background: var(--tab-selected-background-color);
   -moz-border-bottom-colors: var(--tab-selected-bottom-line-color);
+  border-left: 1px solid rgba(182, 182, 179, 0.5);
+  border-right: 1px solid rgba(182, 182, 179, 0.5);
+}
+
+.tabbrowser-tab[visuallyselected=true]:hover .tab-background-middle {
+  background: var(--tab-selected-hover-background-color);
 }
 
 .tab-background-start,
@@ -2683,18 +2684,13 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   background-image: linear-gradient(to top, var(--tab-selected-bottom-line-color), #282b2b 2px, #282b2b);
 }
 
-.tabbrowser-tab:hover .tab-background-start:not([visuallyselected=true]),
-.tabbrowser-tab:hover .tab-background-end:not([visuallyselected=true]) {
-  background: rgba(182,182,179,0.3);
-}
-
 #TabsToolbar[brighttext] .tabbrowser-tab:hover .tab-background-start:not([visuallyselected=true]),
 #TabsToolbar[brighttext] .tabbrowser-tab:hover .tab-background-end:not([visuallyselected=true]) {
   background: #2a2f2f;
 }
 
 .tab-background {
-  margin-inline-end: -1px;
+  margin-inline-end: 0;
   margin-inline-start: 0;
 }
 
@@ -2722,8 +2718,9 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 .tab-content {
   -moz-binding: url(chrome://browser/skin/gnomeBindings.xml#label-center);
-  padding-inline-end: 9px;
-  padding-inline-start: 9px;
+  padding-inline-end: 14px;
+  padding-inline-start: 14px;
+  padding-bottom: 2px;
 }
 
 .tab-content[pinned] {
@@ -2815,12 +2812,12 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
   list-style-image: url(chrome://browser/skin/tabbrowser/loading-inverted.png);
 }
 
-/*
-.tab-label {
-  margin-inline-end: 0;
-  margin-inline-start: 0;
-}
 
+.tab-label {
+  margin-inline-end: 2px !important;
+  margin-inline-start: 2px !important;
+}
+/*
 .tab-close-button {
   margin-inline-start: 4px;
   margin-inline-end: -2px;
