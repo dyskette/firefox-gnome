@@ -6,34 +6,21 @@
 
 /* Toolbar button */
 
-#RIL_toolbar_button {
+#nav-bar #pocket-button > .toolbarbutton-icon {
+	padding: 0 !important;
+}
+
+#pocket-button,
+#pocket-button[cui-areatype="toolbar"]
+#pocket-button[cui-areatype="toolbar"][open] {
+  list-style-image: none !important;
+  -moz-image-region: auto !important;
+}
+
+#pocket-button[cui-areatype="toolbar"] > .toolbarbutton-icon {
   list-style-image: url(chrome://symbolic-icons/skin/extensions/pocket.svg) !important;
 }
 
-#RIL_toolbar_button[cui-areatype="menu-panel"] > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
-toolbarpaletteitem[place="palette"] > #RIL_toolbar_button > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
-  opacity: .6;
-}
-
-/* URL-bar icon */
-
-#RIL_urlbar_add {
-  list-style-image: url(chrome://symbolic-icons/skin/extensions/pocket.svg) !important;
-}
-
-#RIL_urlbar_mark {
+#pocket-button[cui-areatype="toolbar"][open] > .toolbarbutton-icon {
   list-style-image: url(chrome://symbolic-icons/skin/extensions/pocket-added.svg) !important;
-}
-
-#RIL_urlbar_add {
-  opacity: 0.35;
-}
-
-#RIL_urlbar_mark {
-  opacity: 0.7;
-}
-
-#RIL_urlbar_add:hover,
-#RIL_urlbar_mark:hover {
-  opacity: 1;
 }
