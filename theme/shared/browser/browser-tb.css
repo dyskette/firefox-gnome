@@ -45,11 +45,11 @@
 
 :-moz-any(#TabsToolbar, #nav-bar)[brighttext] .toolbarbutton-1:not([disabled="true"]):hover,
 toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutton:hover {
-  background-image: linear-gradient(to bottom, #5b6464, #434a4a 40%, #393f3f);
-  border-color: #1c1f1f;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.1),
-              0 1px rgba(238,238,236,.1);
-  text-shadow: 0 -1px rgba(0,0,0,.78);
+  background-image: linear-gradient(rgb(53,60,62), rgb(46,52,54) 60%, rgb(42,46,48));
+  border-color: rgb(27,31,32);
+  border-bottom-color: rgb(11,12,12);
+  box-shadow: inset 0 1px rgba(255,255,255,0.05);
+  text-shadow: 0 -1px rgba(0,0,0,.81);
 }
 
 /* :active */
@@ -60,10 +60,10 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[checked="true"]:hover,
 :-moz-any(#window-controls, .window-controls) > toolbarbutton:active:hover,
 .tabs-closebutton:active:hover {
-  background-image: linear-gradient(rgb(200,200,197),rgb(220,220,218));
-  border-color: rgb(182, 182, 179);
-  border-bottom-color: rgb(145, 145, 140);
-  box-shadow: 0 2px 1px -2px rgba(0,0,0,0) inset;
+  background: rgb(217,217,215);
+  border-color: rgb(182,182,179);
+  border-bottom-color: rgb(182,182,179);
+  box-shadow: inset 0 1px rgba(0,0,0,0);
   text-shadow: 0 1px rgba(255,255,255,.77);
 }
 
@@ -86,12 +86,11 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 :-moz-any(#TabsToolbar, #nav-bar)[brighttext] .toolbarbutton-1[checked="true"],
 :-moz-any(#TabsToolbar, #nav-bar)[brighttext] .toolbarbutton-1[checked="true"]:hover,
 toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutton:active:hover {
-  background-image: linear-gradient(to bottom, #232727, #2d3232);
-  border-color: #1c1f1f;
-  box-shadow: inset 0 1px rgba(0,0,0,.07),
-              inset 0 2px 1px -2px rgba(0,0,0,.6),
-              0 1px rgba(238,238,236,.1);
-  text-shadow: 0 -1px rgba(0,0,0,.89);
+  background: rgb(37,41,43);
+  border-color: rgb(27,31,32);
+  border-bottom-color: rgb(27,31,32);
+  box-shadow: inset 0 1px rgba(0,0,0,0);
+  text-shadow: 0 -1px rgba(0,0,0,.81);
 }
 
 /* disabled */
@@ -121,24 +120,22 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-menubutton-dropmarker {
   -moz-box-align: center;
-  border-inline-start: 2px solid transparent;
+  border-inline-start: 1px solid transparent;
   margin-inline-end: 1px;
   margin-inline-start: 2px;
 }
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([open="true"]):not([buttondown="true"]):hover > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(ltr) {
-  box-shadow: -1px 0 0 rgb(157,157,153);
+  border-left-color: rgb(182,182,179);
 }
-
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([open="true"]):not([buttondown="true"]):hover > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(rtl) {
-  box-shadow: 1px 0 0 rgb(157,157,153);
+  border-right-color: rgb(182,182,179);
 }
-
 :-moz-any(#TabsToolbar, #nav-bar)[brighttext] .toolbarbutton-1:not([open="true"]):not([buttondown="true"]):hover > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(ltr) {
-  -moz-border-left-colors: rgba(0,0,0,0.2) rgba(255,255,255,0.05);
+  border-left-color: rgb(27,31,32);
 }
 :-moz-any(#TabsToolbar, #nav-bar)[brighttext] .toolbarbutton-1:not([open="true"]):not([buttondown="true"]):hover > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(rtl) {
-  -moz-border-right-colors: rgba(255,255,255,0.05) rgba(0,0,0,0.2);
+  border-right-color: rgb(27,31,32);
 }
 
 :-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-menubutton-button {
@@ -205,11 +202,11 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 #nav-bar :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]),
 #nav-bar :-moz-any(#back-button, #forward-button):not(:hover):not([open="true"]):not([disabled="true"]),
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not(:hover):not([open="true"]):not([checked="true"]):not([disabled="true"]) {
-  border-color: rgb(182, 182, 179);
-  border-bottom-color: rgb(145, 145, 140);
-  background-image: linear-gradient(to bottom, #e8e8e7, #dededd 60%, #cfcfcd);
-  text-shadow: 0 1px rgba(255, 255, 255, 0.76923);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.8);
+  background-image: linear-gradient(rgb(232,232,231), rgb(222,222,221) 60%, rgb(207,207,205));
+  border-color: rgb(182,182,179);
+  border-bottom-color: rgb(145,145,140);
+  box-shadow: inset 0 1px rgba(255,255,255,0.8);
+  text-shadow: 0 1px rgba(255, 255, 255, 0.77);
 }
 
 #nav-bar :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]):-moz-lwtheme,
@@ -217,25 +214,6 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not(:hover):not([open="true"]):not([checked="true"]):not([disabled="true"]):-moz-lwtheme {
   background-image: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(200,200,200,0.5));
   border-color: rgba(50,50,50,.4);
-}
-
-#nav-bar[brighttext] :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]),
-#nav-bar[brighttext] :-moz-any(#back-button, #forward-button):not(:hover):not([open="true"]):not([disabled="true"]),
-#nav-bar[brighttext][reliefbuttons="true"] .toolbarbutton-1:not(:hover):not([open="true"]):not([checked="true"]):not([disabled="true"]) {
-  background-image: linear-gradient(to bottom, #454c4c, #393f3f 40%, #2d3232);
-  border-color: #1c1f1f;
-  text-shadow: 0 -1px rgba(0,0,0,.81);
-}
-
-#nav-bar :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]),
-#nav-bar :-moz-any(#back-button, #forward-button):not(:hover):not([open="true"]):not([disabled="true"]),
-#nav-bar[reliefbuttons="true"] .toolbarbutton-1:not(:hover):not([open="true"]):not([checked="true"]):not([disabled="true"]) {
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.8);
-}
-
-#nav-bar :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]):-moz-lwtheme,
-#nav-bar :-moz-any(#back-button, #forward-button):not(:hover):not([open="true"]):not([disabled="true"]):-moz-lwtheme,
-#nav-bar[reliefbuttons="true"] .toolbarbutton-1:not(:hover):not([open="true"]):not([checked="true"]):not([disabled="true"]):-moz-lwtheme {
   box-shadow: 0 1px 0 rgba(255,255,255,0.15),
               inset 0 1px 0 rgba(255,255,255,0.3);
 }
@@ -243,8 +221,11 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 #nav-bar[brighttext] :-moz-any(#urlbar-container, #edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:hover):not([open="true"]):not([disabled="true"]),
 #nav-bar[brighttext] :-moz-any(#back-button, #forward-button):not(:hover):not([open="true"]):not([disabled="true"]),
 #nav-bar[brighttext][reliefbuttons="true"] .toolbarbutton-1:not(:hover):not([open="true"]):not([checked="true"]):not([disabled="true"]) {
-  box-shadow: inset 0 1px rgba(255,255,255,.1),
-              0 1px rgba(238,238,236,.1);
+  background-image: linear-gradient(rgb(53,60,62), rgb(46,52,54) 60%, rgb(42,46,48));
+  border-color: rgb(27,31,32);
+  border-bottom-color: rgb(11,12,12);
+  box-shadow: inset 0 1px rgba(255,255,255,0.05);
+  text-shadow: 0 -1px rgba(0,0,0,.81);
 }
 
 /* disabled */
@@ -269,10 +250,9 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 #nav-bar[brighttext] :-moz-any(#back-button, #forward-button)[disabled="true"],
 #nav-bar[brighttext] :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1[disabled="true"],
 #nav-bar[brighttext][reliefbuttons="true"] .toolbarbutton-1[disabled="true"] {
-  background: #323636;
-  border-color: #1e2222;
-  box-shadow: inset 0 1px transparent,
-              0 1px transparent;
+  background: rgb(42,46,48);
+  border-color: rgb(32,36,37);
+  box-shadow: inset 0 1px rgba(255,255,255,0);
   text-shadow: none;
 }
 
@@ -287,17 +267,16 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 }
 
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not([open="true"]):not([buttondown="true"]) > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(ltr) {
-  box-shadow: -1px 0 0 rgb(157,157,153);
+  border-left-color: rgb(182,182,179) !important;
 }
 #nav-bar[reliefbuttons="true"] .toolbarbutton-1:not([open="true"]):not([buttondown="true"]) > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(rtl) {
-  box-shadow: 1px 0 0 rgb(157,157,153);
+  border-right-color: rgb(182,182,179) !important;
 }
-
 #nav-bar[reliefbuttons="true"][brighttext] .toolbarbutton-1:not([open="true"]):not([buttondown="true"]) > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(ltr) {
-  -moz-border-left-colors: rgba(0,0,0,0.2) rgba(255,255,255,0.05) !important;
+  border-left-color: rgb(27,31,32) !important;
 }
 #nav-bar[reliefbuttons="true"][brighttext] .toolbarbutton-1:not([open="true"]):not([buttondown="true"]) > .toolbarbutton-menubutton-dropmarker:-moz-locale-dir(rtl) {
-  -moz-border-right-colors: rgba(255,255,255,0.05) rgba(0,0,0,0.2) !important;
+  border-right-color: rgb(27,31,32) !important;
 }
 
 #nav-bar[reliefbuttons="true"] .toolbarbutton-menubutton-button {
@@ -310,10 +289,13 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 
 /* ::::: Connected buttons ::::: */
 
+/* TODO: Remove this... it's too complicated for such a simple thing */
+
+/* Middle segment */
 #nav-bar[reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:not(:first-of-type):not(:last-of-type):-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]),
 #nav-bar :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:first-of-type):not(:last-of-type):-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]) {
-  box-shadow: inset -1px 0 0 rgb(157,157,153),
-              inset 0 1px rgba(255, 255, 255, 0.8);
+  box-shadow: inset -1px 0 0 rgb(182,182,179),
+              inset 0 1px rgba(255,255,255,0.8);
 }
 
 #nav-bar[reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:not(:first-of-type):not(:last-of-type):-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]):-moz-lwtheme,
@@ -326,21 +308,19 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 
 #nav-bar[brighttext][reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:not(:first-of-type):not(:last-of-type):-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]),
 #nav-bar[brighttext] :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:first-of-type):not(:last-of-type):-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]) {
-  box-shadow: 0 1px 0 rgba(255,255,255,0.1),
-              inset 0 1px 0 rgba(255,255,255,0.05),
-              inset 1px 0 0 rgba(255,255,255,0.02),
-              inset -1px 0 0 rgba(0,0,0,0.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05),
+              inset -1px 0 0 rgb(27,31,32);
 }
 
-/* */
+/* First segment */
 #nav-bar:-moz-locale-dir(ltr) #back-button:-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]),
 #nav-bar:-moz-locale-dir(rtl) #forward-button:-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]),
 #nav-bar:-moz-locale-dir(ltr)[reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:first-of-type:-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]),
 #nav-bar:-moz-locale-dir(rtl)[reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:last-of-type:-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]),
 #nav-bar:-moz-locale-dir(ltr) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:first-of-type:-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]),
 #nav-bar:-moz-locale-dir(rtl) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:last-of-type:-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]) {
-  box-shadow: inset -1px 0 0 rgb(157,157,153),
-              inset 0 1px rgba(255, 255, 255, 0.8);
+  box-shadow: inset -1px 0 0 rgb(182,182,179),
+              inset 0 1px rgba(255,255,255,0.8);
 }
 
 #nav-bar:-moz-locale-dir(ltr) #back-button:-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]):-moz-lwtheme,
@@ -361,21 +341,18 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 #nav-bar[brighttext]:-moz-locale-dir(rtl)[reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:last-of-type:-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]),
 #nav-bar[brighttext]:-moz-locale-dir(ltr) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:first-of-type:-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]),
 #nav-bar[brighttext]:-moz-locale-dir(rtl) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:last-of-type:-moz-any(:not(:hover), :hover:not(:active)):not([disabled="true"]) {
-  box-shadow: 0 1px 0 rgba(255,255,255,0.1),
-              inset 0 1px 0 rgba(255,255,255,0.05),
-              inset 1px 0 0 rgba(255,255,255,0.01),
-              inset -1px 0 0 rgba(0,0,0,0.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05),
+              inset -1px 0 0 rgb(27,31,32);
 }
 
-/* */
+/* First segment disabled */
 #nav-bar:-moz-locale-dir(ltr) #back-button[disabled="true"],
 #nav-bar:-moz-locale-dir(rtl) #forward-button[disabled="true"],
 #nav-bar:-moz-locale-dir(ltr)[reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:not(:last-of-type)[disabled="true"],
 #nav-bar:-moz-locale-dir(rtl)[reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:not(:first-of-type)[disabled="true"],
 #nav-bar:-moz-locale-dir(ltr) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:last-of-type)[disabled="true"],
 #nav-bar:-moz-locale-dir(rtl) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:first-of-type)[disabled="true"] {
-  box-shadow: inset -1px 0 0 rgb(165,165,161),
-              inset 0 1px rgba(255, 255, 255, 0);
+  box-shadow: inset -1px 0 0 rgb(182,182,179);
 }
 
 #nav-bar[brighttext]:-moz-locale-dir(ltr) #back-button[disabled="true"],
@@ -384,18 +361,17 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 #nav-bar[brighttext]:-moz-locale-dir(rtl)[reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:not(:first-of-type)[disabled="true"],
 #nav-bar[brighttext]:-moz-locale-dir(ltr) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:last-of-type)[disabled="true"],
 #nav-bar[brighttext]:-moz-locale-dir(rtl) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:not(:first-of-type)[disabled="true"] {
-  box-shadow: 0 1px 0 rgba(255,255,255,0.1),
-              inset -1px 0 0 rgba(0,0,0,0.08);
+  box-shadow: inset -1px 0 0 rgb(27,31,32);
 }
 
-/* */
+/* Last segment button */
 #nav-bar:-moz-locale-dir(ltr) #forward-button:not(:hover):not(:active):not([disabled="true"]),
 #nav-bar:-moz-locale-dir(rtl) #back-button:not(:hover):not(:active):not([disabled="true"]),
 #nav-bar:-moz-locale-dir(ltr)[reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:last-of-type:not(:hover):not(:active):not([disabled="true"]),
 #nav-bar:-moz-locale-dir(rtl)[reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:first-of-type:not(:hover):not(:active):not([disabled="true"]),
 #nav-bar:-moz-locale-dir(ltr) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:last-of-type:not(:hover):not(:active):not([disabled="true"]),
 #nav-bar:-moz-locale-dir(rtl) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:first-of-type:not(:hover):not(:active):not([disabled="true"]) {
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px rgba(255,255,255,0.8);
 }
 
 #nav-bar:-moz-locale-dir(ltr) #forward-button:not(:hover):not(:active):not([disabled="true"]):-moz-lwtheme,
@@ -416,10 +392,7 @@ toolbar[brighttext] :-moz-any(#window-controls, .window-controls) > toolbarbutto
 #nav-bar[brighttext]:-moz-locale-dir(rtl)[reliefbuttons="true"] :-moz-any(#edit-controls, #zoom-controls) > .toolbarbutton-1:first-of-type:not(:hover):not(:active):not([disabled="true"]),
 #nav-bar[brighttext]:-moz-locale-dir(ltr) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:last-of-type:not(:hover):not(:active):not([disabled="true"]),
 #nav-bar[brighttext]:-moz-locale-dir(rtl) :-moz-any(#edit-controls, #zoom-controls):hover > .toolbarbutton-1:first-of-type:not(:hover):not(:active):not([disabled="true"]) {
-  box-shadow: 0 1px 0 rgba(255,255,255,0.1),
-              inset 0 1px 0 rgba(255,255,255,0.05),
-              inset 1px 0 0 rgba(255,255,255,0.02),
-              inset -1px 0 0 rgba(255,255,255,0.01);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 /* It's universal code (can be used for 3+ buttons in group) */
