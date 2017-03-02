@@ -105,14 +105,6 @@ toolbar[brighttext] {
   border-top: none;
 }
 
-#navigator-toolbox::after {
-  content: "";
-  display: -moz-box;
-  -moz-box-ordinal-group: 101; /* tabs toolbar is 100 */
-  height: 1px;
-  background-color: var(--toolbar-border-color);
-}
-
 #PersonalToolbar {
   -moz-box-ordinal-group: 80;
 }
@@ -123,10 +115,6 @@ toolbar[brighttext] {
 
 #toolbar-menubar {
   -moz-box-ordinal-group: 120;
-}
-
-#navigator-toolbox:-moz-lwtheme::after {
-  background-color: rgba(0,0,0,.3);
 }
 
 /*
@@ -145,22 +133,25 @@ toolbar[brighttext] {
 }
 */
 
-#navigator-toolbox > toolbar:not(:-moz-lwtheme):not(#toolbar-menubar):not(#TabsToolbar):not(#PersonalToolbar) {
+#nav-bar:not(:-moz-lwtheme) {
   -moz-appearance: none;
   border-style: none;
   background-color: rgb(239,239,239);
+  margin-bottom: 1px;
+  box-shadow: 0px 1px 0px 0px rgb(145,145,140);
 }
 
-#navigator-toolbox > toolbar[brighttext]:not(#toolbar-menubar):not(#TabsToolbar):not(#PersonalToolbar) {
+#nav-bar[brighttext] {
   background-color: rgb(42,46,48);
+  box-shadow: 0px 1px 0px 0px rgb(11,11,12);
 }
 
-#main-window[htitlemode] #navigator-toolbox > toolbar:not(:-moz-lwtheme):not(#toolbar-menubar):not(#TabsToolbar):not(#PersonalToolbar) {
+#main-window[htitlemode] #nav-bar:not(:-moz-lwtheme) {
   /* GNOME 3.20 Titlebar */
   background-image: linear-gradient(to top, rgb(212,212,210), rgb(239,239,239) 2px, rgb(244,244,244) 3px);
 }
 
-#main-window[htitlemode] #navigator-toolbox > toolbar[brighttext]:not(#toolbar-menubar):not(#TabsToolbar):not(#PersonalToolbar) {
+#main-window[htitlemode] #nav-bar[brighttext] {
   background-image: linear-gradient(to top, rgb(37,41,43), rgb(42,46,48) 2px, rgb(44,49,51) 3px);
 }
 
@@ -220,8 +211,7 @@ toolbar[brighttext] {
  */
 #personal-bookmarks {
   min-height: 30px;
-  border-top: 1px solid var(--toolbar-border-color);
-  margin: -1px -2px;
+  border-bottom: 1px solid var(--toolbar-border-color);
 }
 
 #browser-bottombox {
@@ -1113,20 +1103,13 @@ toolbarpaletteitem[place="palette"] > :-moz-any(#edit-controls, #zoom-controls) 
 /* Fullscreen window controls */
 
 :-moz-any(#window-controls, .window-controls) {
-  background: linear-gradient(transparent, rgba(197,197,197,0.9) 18%, rgba(197,197,197,1), rgba(197,197,197,0.9) 82%, transparent) no-repeat,
-              linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.5), rgba(255,255,255,0.1)) no-repeat;
-  background-size: 1px 100%, 1px 100%;
-  background-position: 0 0, 1px 0;
+  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)) no-repeat;
+  background-size: 1px 100%;
   overflow: hidden;
   margin: -1px 3px !important;
   margin-inline-start: 3px !important;
   padding: 1px 0;
   padding-inline-start: 7px;
-}
-
-toolbar[brighttext] :-moz-any(#window-controls, .window-controls) {
-  background-image: linear-gradient(transparent, rgba(41,46,46,0.9) 18%, rgba(41,46,46,1), rgba(41,46,46,0.9) 82%, transparent),
-                    linear-gradient(rgba(255,255,255,0.02), rgba(255,255,255,0.1), rgba(255,255,255,0.02));
 }
 
 #toolbar-menubar > :-moz-any(#window-controls, .window-controls) {
@@ -2509,8 +2492,7 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 
 #TabsToolbar {
   -moz-appearance: none;
-  background: rgb(210,210,208);
-  border-top: 1px solid var(--toolbar-border-color);
+  background: rgb(207,207,205);
   border-bottom: 0;
   min-height: 0;
   padding: 0 3px !important; /* FIXME */
@@ -2521,13 +2503,10 @@ toolbar[brighttext] .urlbar-history-dropmarker:not(:hover) {
 #TabsToolbar:-moz-lwtheme {
   background: hsla(0,0%,0%,.048);
   border-top-color: hsla(120,100%,2.8%,.338);
-  box-shadow: 0 -1px hsla(0,0%,0%,.048),
-              inset 0 2px 3px -1px hsla(0,0%,0%,.15);
 }
 
 #TabsToolbar[brighttext] {
-  background: #303535;
-  box-shadow: inset 0 2px 3px -1px hsla(0,0%,0%,.15);
+  background: rgb(39,44,46);
 }
 
 #main-window[privatebrowsingmode=temporary] #TabsToolbar {
